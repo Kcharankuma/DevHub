@@ -3,20 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <<meta name="google-site-verification"
-      content="8IrXSd5f6rbWy2k9Pq2laifRe833kXQ_jT9P_6DRhqU" />
+    <meta name="google-site-verification" content="8IrXSd5f6rbWy2k9Pq2laifRe833kXQ_jT9P_6DRhqU" />
     <title>DevHub Universal - Instant Developer Downloads</title>
 
     <!-- External Font & Icon CDNs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
     :root {
@@ -42,6 +37,13 @@
       padding: 0;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-font-smoothing: antialiased;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    input, textarea {
+      user-select: auto;
+      -webkit-user-select: auto;
     }
 
     html, body {
@@ -470,7 +472,7 @@
       margin-bottom: 1rem;
     }
 
-    /* REAL LOGO COLOR RULES */
+    /* Real Logo Rules */
     .card-icon {
       font-size: 2.6rem !important;
       line-height: 1 !important;
@@ -527,7 +529,7 @@
       flex-grow: 1;
     }
 
-    /* ELECTRIC INDIGO / VIOLET DOWNLOAD BUTTONS */
+    /* Electric Indigo/Violet Download Buttons */
     .download-action {
       text-decoration: none;
       width: 100%;
@@ -601,7 +603,7 @@
         justify-content: space-between;
       }
     }
-  </style>
+    </style>
   </head>
   <body>
 
@@ -644,8 +646,7 @@
           </div>
 
           <div class="dock-actions">
-            <select id="sortSelect" class="sort-select"
-              title="Sort application view">
+            <select id="sortSelect" class="sort-select" title="Sort application view">
               <option value="default">Default Order</option>
               <option value="name-asc">Name (A → Z)</option>
               <option value="name-desc">Name (Z → A)</option>
@@ -657,8 +658,7 @@
         </div>
 
         <div class="category-container">
-          <button class="scroll-btn prev-btn" id="scrollLeft"
-            title="Scroll left">
+          <button class="scroll-btn prev-btn" id="scrollLeft" title="Scroll left">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
 
@@ -675,8 +675,7 @@
             {% endfor %}
           </div>
 
-          <button class="scroll-btn next-btn" id="scrollRight"
-            title="Scroll right">
+          <button class="scroll-btn next-btn" id="scrollRight" title="Scroll right">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -691,8 +690,7 @@
       </div>
 
       <footer>
-        <p>&copy; 2026 DevHub Universal &bull; Direct executable payloads with
-          zero intermediate landing pages.</p>
+        <p>&copy; 2026 DevHub Universal &bull; Direct executable payloads with zero intermediate landing pages.</p>
       </footer>
     </div>
 
@@ -829,7 +827,7 @@
 
       requestAnimationFrame(loop);
     })();
-  </script>
+    </script>
 
     <!-- Application Interaction & Real Brand Color Logic -->
     <script>
@@ -994,10 +992,10 @@
           throw new Error(data.message || 'Sync failed');
         }
       } catch (err) {
-        status.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Rate limited';
+        status.innerHTML = '<i class="fa-solid fa-shield-halved"></i> Protected Action';
         status.style.color = '#ef4444';
-        btn.innerHTML = '<i class="fa-solid fa-rotate"></i> Retry';
-        console.error(err);
+        btn.innerHTML = '<i class="fa-solid fa-rotate"></i> Sync';
+        console.warn('Sync route is protected by server authentication.');
       } finally {
         btn.disabled = false;
       }
@@ -1119,6 +1117,49 @@
 
     initCategoryCounts();
     renderCatalog();
-  </script>
+    </script>
+
+    <!-- Client-side Anti-Tamper & DevTools Deterrent -->
+    <script>
+      // 1. Disable Right-Click context menu
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+
+      // 2. Block keyboard inspection shortcuts
+      document.addEventListener('keydown', function(e) {
+        // Block F12
+        if (e.key === 'F12') {
+          e.preventDefault();
+          return false;
+        }
+        // Block Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C (DevTools)
+        if (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c'].includes(e.key)) {
+          e.preventDefault();
+          return false;
+        }
+        // Block Ctrl+U (View Page Source)
+        if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+          e.preventDefault();
+          return false;
+        }
+        // Block Ctrl+S (Save webpage)
+        if (e.ctrlKey && (e.key === 'S' || e.key === 's')) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // 3. Debugger trap to freeze DevTools if opened via browser menu
+      setInterval(() => {
+        (function() {
+          const start = performance.now();
+          debugger;
+          if (performance.now() - start > 100) {
+            window.location.reload();
+          }
+        })();
+      }, 1500);
+    </script>
   </body>
 </html>
