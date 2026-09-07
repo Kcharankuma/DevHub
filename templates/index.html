@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DevHub Universal - Instant Developer Downloads</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification"
+      content="<meta name="google-site-verification"
+      content="8IrXSd5f6rbWy2k9Pq2laifRe833kXQ_jT9P_6DRhqU" />" />
+    <title>DevHub Universal - Instant Developer Downloads</title>
 
-  <!-- External Font & Icon CDNs -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- External Font & Icon CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <style>
+    <style>
     :root {
       --bg-main: #050814;
       --bg-surface: #0a1020;
@@ -596,98 +603,102 @@
       }
     }
   </style>
-</head>
-<body>
+  </head>
+  <body>
 
-  <!-- 3D Cyber Terrain Canvas -->
-  <canvas id="bg3d"></canvas>
+    <!-- 3D Cyber Terrain Canvas -->
+    <canvas id="bg3d"></canvas>
 
-  <div class="container">
-    <header>
-      <div class="brand-badge">
-        <i class="fa-solid fa-layer-group"></i> Centralized Dev Platform
-      </div>
-      <h1>DevHub Universal</h1>
-      <p>Instant 1-click binaries, compiler toolchains, and deployment boilerplates straight from upstream official repositories.</p>
+    <div class="container">
+      <header>
+        <div class="brand-badge">
+          <i class="fa-solid fa-layer-group"></i> Centralized Dev Platform
+        </div>
+        <h1>DevHub Universal</h1>
+        <p>Instant 1-click binaries, compiler toolchains, and deployment
+          boilerplates straight from upstream official repositories.</p>
 
-      <div class="header-actions">
-        <span class="sync-status" id="syncStatus">
-          <i class="fa-solid fa-circle-check"></i> Auto-sync Active
-        </span>
-        <button class="sync-btn" id="syncBtn" onclick="triggerManualSync()">
-          <i class="fa-solid fa-rotate"></i> Sync Releases
-        </button>
-      </div>
-    </header>
-
-    <div class="control-dock">
-      <div class="command-bar">
-        <div class="search-wrapper">
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <input 
-            type="text" 
-            id="searchInput" 
-            placeholder="Quick find anything... (e.g., python, docker, 28 MB, postgres, react)" 
-            autocomplete="off" 
-            spellcheck="false"
-          />
-          <button class="clear-btn" id="clearSearchBtn" title="Clear Search">
-            <i class="fa-solid fa-xmark"></i>
+        <div class="header-actions">
+          <span class="sync-status" id="syncStatus">
+            <i class="fa-solid fa-circle-check"></i> Auto-sync Active
+          </span>
+          <button class="sync-btn" id="syncBtn" onclick="triggerManualSync()">
+            <i class="fa-solid fa-rotate"></i> Sync Releases
           </button>
-          <span class="search-hint-badge">Ctrl + K</span>
+        </div>
+      </header>
+
+      <div class="control-dock">
+        <div class="command-bar">
+          <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Quick find anything... (e.g., python, docker, 28 MB, postgres, react)"
+              autocomplete="off"
+              spellcheck="false" />
+            <button class="clear-btn" id="clearSearchBtn" title="Clear Search">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="search-hint-badge">Ctrl + K</span>
+          </div>
+
+          <div class="dock-actions">
+            <select id="sortSelect" class="sort-select"
+              title="Sort application view">
+              <option value="default">Default Order</option>
+              <option value="name-asc">Name (A → Z)</option>
+              <option value="name-desc">Name (Z → A)</option>
+              <option value="size-desc">Largest Payload</option>
+              <option value="size-asc">Smallest Payload</option>
+            </select>
+            <span class="stat-counter" id="activeItemCount">... tools</span>
+          </div>
         </div>
 
-        <div class="dock-actions">
-          <select id="sortSelect" class="sort-select" title="Sort application view">
-            <option value="default">Default Order</option>
-            <option value="name-asc">Name (A → Z)</option>
-            <option value="name-desc">Name (Z → A)</option>
-            <option value="size-desc">Largest Payload</option>
-            <option value="size-asc">Smallest Payload</option>
-          </select>
-          <span class="stat-counter" id="activeItemCount">... tools</span>
+        <div class="category-container">
+          <button class="scroll-btn prev-btn" id="scrollLeft"
+            title="Scroll left">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="category-scroller" id="tabScroller">
+            <button class="tab-pill active" data-filter="all">
+              <i class="fa-solid fa-border-all"></i> All Tools
+              <span class="pill-count" id="count-all">0</span>
+            </button>
+            {% for key, val in categories.items() %}
+            <button class="tab-pill" data-filter="{{ key }}">
+              {{ val }}
+              <span class="pill-count" id="count-{{ key }}">0</span>
+            </button>
+            {% endfor %}
+          </div>
+
+          <button class="scroll-btn next-btn" id="scrollRight"
+            title="Scroll right">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
       </div>
 
-      <div class="category-container">
-        <button class="scroll-btn prev-btn" id="scrollLeft" title="Scroll left">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
+      <div id="contentArea"></div>
 
-        <div class="category-scroller" id="tabScroller">
-          <button class="tab-pill active" data-filter="all">
-            <i class="fa-solid fa-border-all"></i> All Tools
-            <span class="pill-count" id="count-all">0</span>
-          </button>
-          {% for key, val in categories.items() %}
-          <button class="tab-pill" data-filter="{{ key }}">
-            {{ val }}
-            <span class="pill-count" id="count-{{ key }}">0</span>
-          </button>
-          {% endfor %}
-        </div>
-
-        <button class="scroll-btn next-btn" id="scrollRight" title="Scroll right">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
+      <div id="noResults" class="no-results">
+        <i class="fa-solid fa-box-open"></i>
+        <h3>No tools matched your criteria</h3>
+        <p>Try clearing your search terms or selecting "All Tools".</p>
       </div>
+
+      <footer>
+        <p>&copy; 2026 DevHub Universal &bull; Direct executable payloads with
+          zero intermediate landing pages.</p>
+      </footer>
     </div>
 
-    <div id="contentArea"></div>
-
-    <div id="noResults" class="no-results">
-      <i class="fa-solid fa-box-open"></i>
-      <h3>No tools matched your criteria</h3>
-      <p>Try clearing your search terms or selecting "All Tools".</p>
-    </div>
-
-    <footer>
-      <p>&copy; 2026 DevHub Universal &bull; Direct executable payloads with zero intermediate landing pages.</p>
-    </footer>
-  </div>
-
-  <!-- 3D Interactive Mesh Background Engine -->
-  <script>
+    <!-- 3D Interactive Mesh Background Engine -->
+    <script>
     (function init3DBackground() {
       const canvas = document.getElementById('bg3d');
       if (!canvas) return;
@@ -821,8 +832,8 @@
     })();
   </script>
 
-  <!-- Application Interaction & Real Brand Color Logic -->
-  <script>
+    <!-- Application Interaction & Real Brand Color Logic -->
+    <script>
     const catalog = {{ catalog | tojson | safe }};
     const categoryNames = {{ categories | tojson | safe }};
 
@@ -1110,5 +1121,5 @@
     initCategoryCounts();
     renderCatalog();
   </script>
-</body>
+  </body>
 </html>
