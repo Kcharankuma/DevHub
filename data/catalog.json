@@ -1086,5 +1086,203 @@
     "icon": "devicon-blender-original colored",
     "desc": "3D creation suite for UI animation, web assets, and game models.",
     "url": "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.3/blender-4.3.2-windows-x64.msi"
+  },
+  {
+    "name": "Supabase",
+    "category": "database",
+    "desc": "Open-source Firebase alternative with Postgres database, Authentication, instant APIs, and Realtime subscriptions.",
+    "version": "v1.190.0",
+    "size": "28.5 MB",
+    "icon": "devicon-supabase-plain",
+    "url": "https://github.com/supabase/cli/releases/latest"
+  },
+  {
+    "name": "Redis (RedisInsight)",
+    "category": "database",
+    "desc": "Official desktop GUI for Redis to visualize keys, run Lua scripts, and monitor memory cache performance.",
+    "version": "v2.54.0",
+    "size": "112.0 MB",
+    "icon": "devicon-redis-plain",
+    "url": "https://github.com/RedisInsight/RedisInsight/releases/latest"
+  },
+  {
+    "name": "Postman",
+    "category": "api",
+    "desc": "Industry-standard collaborative API development, testing, automation, and mock server suite.",
+    "version": "v11.2.0",
+    "size": "165.0 MB",
+    "icon": "devicon-postman-plain",
+    "url": "https://www.postman.com/downloads/"
+  },
+  {
+    "name": "DBeaver",
+    "category": "database",
+    "desc": "Universal database manager and SQL client supporting MySQL, PostgreSQL, SQLite, Oracle, and DB2.",
+    "version": "v24.2.0",
+    "size": "118.0 MB",
+    "icon": "devicon-dbeaver-plain",
+    "url": "https://github.com/dbeaver/dbeaver/releases/latest"
+  },
+  {
+    "name": "Vercel CLI",
+    "category": "deployment",
+    "desc": "Deploy Next.js, frontend frameworks, and serverless edge functions directly from your terminal.",
+    "version": "v35.0.0",
+    "size": "45.0 MB",
+    "icon": "devicon-vercel-original",
+    "url": "https://github.com/vercel/vercel/releases/latest"
+  },
+  {
+    "name": "Netlify CLI",
+    "category": "deployment",
+    "desc": "Configure local emulation, preview branch deploys, and manage modern web hosting environments.",
+    "version": "v17.30.0",
+    "size": "52.0 MB",
+    "icon": "devicon-netlify-plain",
+    "url": "https://github.com/netlify/cli/releases/latest"
+  },
+  {
+    "name": "Firebase CLI",
+    "category": "deployment",
+    "desc": "Command line tools to test, manage, and deploy Firebase Realtime Database, Firestore, and Functions.",
+    "version": "v13.15.0",
+    "size": "38.0 MB",
+    "icon": "devicon-firebase-plain",
+    "url": "https://github.com/firebase/firebase-tools/releases/latest"
+  },
+  {
+    "name": "GitKraken",
+    "category": "terminals",
+    "desc": "Visual Git client with interactive merge conflict resolution, commit graphing, and team workspaces.",
+    "version": "v10.1.0",
+    "size": "154.0 MB",
+    "icon": "devicon-gitkraken-plain",
+    "url": "https://www.gitkraken.com/download"
+  },
+  {
+    "name": "GitHub Desktop",
+    "category": "terminals",
+    "desc": "Simple Git GUI client to clone repositories, create branches, and push code without complex CLI commands.",
+    "version": "v3.4.2",
+    "size": "130.0 MB",
+    "icon": "devicon-github-original",
+    "url": "https://central.github.com/deployments/desktop/desktop/latest/win32"
+  },
+  {
+    "name": "Cursor",
+    "category": "ide",
+    "desc": "AI-first code editor built on VS Code with direct model prompting, multi-file edits, and smart autocomplete.",
+    "version": "v0.40.0",
+    "size": "95.0 MB",
+    "icon": "fa-solid fa-brain",
+    "url": "https://www.cursor.com/download"
+  },
+  {
+    "name": "Windsurf Editor",
+    "category": "ide",
+    "desc": "Agentic developer IDE designed for collaborative flow with autonomous coding agents and deep context.",
+    "version": "v1.2.0",
+    "size": "110.0 MB",
+    "icon": "fa-solid fa-wind",
+    "url": "https://codeium.com/windsurf"
+  },
+  {
+    "name": "AnythingLLM",
+    "category": "ai",
+    "desc": "All-in-one local desktop AI application with multi-modal RAG, local document chat, and vector database support.",
+    "version": "v1.6.0",
+    "size": "180.0 MB",
+    "icon": "fa-solid fa-microchip",
+    "url": "https://github.com/Mintplex-Labs/anything-llm/releases/latest"
+  },
+  {
+    "name": "Figma Desktop",
+    "category": "design",
+    "desc": "Desktop client for UI/UX collaborative design, auto-layout prototyping, and developer handoff inspect tools.",
+    "version": "v124.0.0",
+    "size": "98.0 MB",
+    "icon": "devicon-figma-plain",
+    "url": "https://www.figma.com/downloads/"
+  },
+  {
+    "name": "Notion Desktop",
+    "category": "sysutils",
+    "desc": "Connected workspace for software engineering documentation, roadmap planning, notes, and task tracking.",
+    "version": "v3.12.0",
+    "size": "85.0 MB",
+    "icon": "devicon-notion-plain",
+    "url": "https://www.notion.so/desktop"
+  },
+  {
+    "name": "Terraform",
+    "category": "devops",
+    "desc": "Infrastructure as Code tool to build, change, and version cloud infrastructure safely and predictably across providers.",
+    "version": "v1.9.5",
+    "size": "26.0 MB",
+    "icon": "devicon-terraform-plain",
+    "url": "https://releases.hashicorp.com/terraform/"
+  },
+  {
+    "name": "Ansible",
+    "category": "devops",
+    "desc": "IT automation engine that automates cloud provisioning, configuration management, and application deployment.",
+    "version": "v10.3.0",
+    "size": "34.0 MB",
+    "icon": "devicon-ansible-plain",
+    "url": "https://pypi.org/project/ansible/#files"
+  },
+  {
+    "name": "Deno",
+    "category": "backend",
+    "desc": "Secure, zero-config JavaScript and TypeScript runtime with built-in bundling, test runner, and native web APIs.",
+    "version": "v1.46.0",
+    "size": "32.0 MB",
+    "icon": "devicon-denojs-original",
+    "url": "https://github.com/denoland/deno/releases/latest"
+  },
+  {
+    "name": "Bun",
+    "category": "backend",
+    "desc": "Incredibly fast all-in-one JavaScript runtime, package manager, test runner, and bundler designed for high speed.",
+    "version": "v1.1.27",
+    "size": "58.0 MB",
+    "icon": "devicon-bun-plain",
+    "url": "https://github.com/oven-sh/bun/releases/latest"
+  },
+  {
+    "name": "PyCharm Community",
+    "category": "ide",
+    "desc": "Dedicated Python IDE featuring intelligent code analysis, graphical debugger, and unit testing integration.",
+    "version": "v2024.2.1",
+    "size": "480.0 MB",
+    "icon": "devicon-pycharm-plain",
+    "url": "https://www.jetbrains.com/pycharm/download/"
+  },
+  {
+    "name": "IntelliJ IDEA Community",
+    "category": "ide",
+    "desc": "Powerful IDE for Java, Kotlin, Android, and polyglot JVM development with deep static code inspection.",
+    "version": "v2024.2.1",
+    "size": "650.0 MB",
+    "icon": "devicon-intellij-plain",
+    "url": "https://www.jetbrains.com/idea/download/"
+  },
+  {
+    "name": "Android Studio",
+    "category": "mobile",
+    "desc": "The official IDE for Google Android app development featuring multi-device emulators and build tools.",
+    "version": "v2024.1.2",
+    "size": "1.1 GB",
+    "icon": "devicon-androidstudio-plain",
+    "url": "https://developer.android.com/studio"
+  },
+  {
+    "name": "Flutter SDK",
+    "category": "mobile",
+    "desc": "Google framework for crafting natively compiled multi-platform applications from a single Dart codebase.",
+    "version": "v3.24.0",
+    "size": "980.0 MB",
+    "icon": "devicon-flutter-plain",
+    "url": "https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.24.0-stable.zip"
   }
 ]
