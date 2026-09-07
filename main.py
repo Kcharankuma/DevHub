@@ -6,13 +6,11 @@ from fastapi.responses import HTMLResponse, JSONResponse, Response, PlainTextRes
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-# 1. Initialize FastAPI Application
 app = FastAPI(
     title="DevHub Universal",
     description="Centralized Developer Tools & Binary Distribution Platform"
 )
 
-# 2. Mount Static Files and Configure Templates
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 static_dir = os.path.join(BASE_DIR, "static")
 templates_dir = os.path.join(BASE_DIR, "templates")
@@ -23,7 +21,6 @@ if os.path.exists(static_dir):
 
 templates = Jinja2Templates(directory=templates_dir)
 
-# 3. Category Metadata Mapping
 CATEGORIES = {
     "programming": "Programming Languages",
     "ide": "IDEs & Editors",
@@ -42,8 +39,11 @@ CATEGORIES = {
 
 def load_catalog():
     if os.path.exists(catalog_file):
-        with open(catalog_file, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(catalog_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return []
     return []
 
 def save_catalog(data):
@@ -51,11 +51,9 @@ def save_catalog(data):
     with open(catalog_file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
-# 4. Search Engine Crawlability Routes (robots.txt & sitemap.xml)
 @app.get("/robots.txt", response_class=PlainTextResponse)
 def get_robots():
-    content = "User-agent: *\nAllow: /\n"
-    return Response(content=content, media_type="text/plain")
+    return Response(content="User-agent: *\nAllow: /\n", media_type="text/plain")
 
 @app.get("/sitemap.xml", response_class=Response)
 def get_sitemap(request: Request):
@@ -71,20 +69,19 @@ def get_sitemap(request: Request):
 """
     return Response(content=xml_content, media_type="application/xml")
 
-# 5. Home Route (Web Dashboard)
-@app.get("/", response_class=HTMLResponse)
+# Supports both GET and HEAD so Render health checks pass smoothly
+@app.api_route("/", methods=["GET", "HEAD"], response_class=HTMLResponse)
 def home(request: Request):
     catalog = load_catalog()
     return templates.TemplateResponse(
-        "index.html",
-        {
-            "request": request,
+        request=request,
+        name="index.html",
+        context={
             "catalog": catalog,
             "categories": CATEGORIES
         }
     )
 
-# 6. Background Release Sync API
 @app.post("/api/sync")
 def sync_github_releases():
     catalog = load_catalog()
@@ -109,8 +106,6 @@ def sync_github_releases():
             if res.status_code == 200:
                 data = res.json()
                 item["version"] = data.get("tag_name", item.get("version"))
-                
-                # Match download asset
                 for asset in data.get("assets", []):
                     name = asset.get("name", "").lower()
                     if asset_pattern and asset_pattern in name:
@@ -127,7 +122,6 @@ def sync_github_releases():
     save_catalog(catalog)
     return {"status": "ok", "updated_repositories": updated}
 
-# 7. Starter Boilerplate Downloader Route
 @app.get("/download/{template_key}")
 def download_starter(template_key: str):
     templates_code = {
@@ -136,7 +130,6 @@ def download_starter(template_key: str):
         "express_starter": ("index.js", "const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => res.send('Express running!'));\napp.listen(3000);\n"),
         "html_boilerplate": ("index.html", "<!DOCTYPE html>\n<html>\n<head><title>App</title></head>\n<body><h1>Hello World</h1></body>\n</html>\n")
     }
-    
     filename, code = templates_code.get(template_key, ("snippet.txt", "Developer snippet"))
     return Response(
         content=code,
