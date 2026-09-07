@@ -1,7 +1,7 @@
 import json
 import os
 import requests
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException, Header
 from fastapi.responses import HTMLResponse, JSONResponse, Response, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -11,6 +11,10 @@ app = FastAPI(
     description="Centralized Developer Tools & Binary Distribution Platform"
 )
 
+# Admin secret key to protect backend write actions
+ADMIN_SECRET_KEY = os.getenv("ADMIN_SYNC_SECRET", "change-this-to-a-strong-random-password")
+
+# Base paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 static_dir = os.path.join(BASE_DIR, "static")
 templates_dir = os.path.join(BASE_DIR, "templates")
@@ -51,6 +55,16 @@ def save_catalog(data):
     with open(catalog_file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
+# Security Middleware
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    return response
+
 @app.get("/robots.txt", response_class=PlainTextResponse)
 def get_robots():
     return Response(content="User-agent: *\nAllow: /\n", media_type="text/plain")
@@ -69,7 +83,7 @@ def get_sitemap(request: Request):
 """
     return Response(content=xml_content, media_type="application/xml")
 
-# Supports both GET and HEAD so Render health checks pass smoothly
+# Home route supporting GET and HEAD
 @app.api_route("/", methods=["GET", "HEAD"], response_class=HTMLResponse)
 def home(request: Request):
     catalog = load_catalog()
@@ -82,8 +96,12 @@ def home(request: Request):
         }
     )
 
+# Protected Sync API
 @app.post("/api/sync")
-def sync_github_releases():
+def sync_github_releases(x_admin_token: str = Header(None)):
+    if x_admin_token != ADMIN_SECRET_KEY:
+        raise HTTPException(status_code=403, detail="Unauthorized: Access denied.")
+
     catalog = load_catalog()
     headers = {"User-Agent": "DevHub-Sync-Engine"}
     github_token = os.getenv("GITHUB_TOKEN")
