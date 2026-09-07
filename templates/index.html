@@ -3,15 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="8IrXSd5f6rbWy2k9Pq2laifRe833kXQ_jT9P_6DRhqU" />
+    <meta name="google-site-verification"
+      content="8IrXSd5f6rbWy2k9Pq2laifRe833kXQ_jT9P_6DRhqU" />
     <title>DevHub Universal - Instant Developer Downloads</title>
 
     <!-- External Font & Icon CDNs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
     :root {
@@ -603,6 +608,104 @@
         justify-content: space-between;
       }
     }
+
+    /* Mobile & Tablet Optimizations */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.25rem 0.75rem 4rem;
+      }
+
+      header {
+        margin-bottom: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 1.9rem;
+        line-height: 1.2;
+      }
+
+      header p {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+      }
+
+      /* Sticky Dock Adaptation */
+      .control-dock {
+        top: 0.5rem;
+        padding: 0.75rem;
+        margin-bottom: 1.75rem;
+        border-radius: var(--radius-md);
+      }
+
+      .command-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+      }
+
+      .search-wrapper {
+        width: 100%;
+        padding: 0.55rem 0.75rem;
+      }
+
+      /* Hide keyboard shortcut tag on mobile touch devices */
+      .search-hint-badge {
+        display: none !important;
+      }
+
+      .dock-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        width: 100%;
+      }
+
+      .sort-select {
+        flex: 1;
+        padding: 0.55rem 0.65rem;
+        font-size: 0.78rem;
+      }
+
+      .stat-counter {
+        padding: 0.55rem 0.65rem;
+        font-size: 0.75rem;
+      }
+
+      /* Category Carousel Buttons */
+      .scroll-btn {
+        display: none !important; /* Touch swipe works natively on mobile */
+      }
+
+      .category-scroller {
+        padding: 0.1rem 0;
+        gap: 0.4rem;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .tab-pill {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.78rem;
+      }
+
+      /* Card Grid Responsive Fix */
+      .grid {
+        grid-template-columns: 1fr; /* Single column on phones */
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1.15rem;
+      }
+
+      .card-icon {
+        font-size: 2.2rem !important;
+      }
+
+      .section-header h2 {
+        font-size: 1.15rem;
+      }
+    }
     </style>
   </head>
   <body>
@@ -646,7 +749,8 @@
           </div>
 
           <div class="dock-actions">
-            <select id="sortSelect" class="sort-select" title="Sort application view">
+            <select id="sortSelect" class="sort-select"
+              title="Sort application view">
               <option value="default">Default Order</option>
               <option value="name-asc">Name (A → Z)</option>
               <option value="name-desc">Name (Z → A)</option>
@@ -658,7 +762,8 @@
         </div>
 
         <div class="category-container">
-          <button class="scroll-btn prev-btn" id="scrollLeft" title="Scroll left">
+          <button class="scroll-btn prev-btn" id="scrollLeft"
+            title="Scroll left">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
 
@@ -675,7 +780,8 @@
             {% endfor %}
           </div>
 
-          <button class="scroll-btn next-btn" id="scrollRight" title="Scroll right">
+          <button class="scroll-btn next-btn" id="scrollRight"
+            title="Scroll right">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -690,7 +796,8 @@
       </div>
 
       <footer>
-        <p>&copy; 2026 DevHub Universal &bull; Direct executable payloads with zero intermediate landing pages.</p>
+        <p>&copy; 2026 DevHub Universal &bull; Direct executable payloads with
+          zero intermediate landing pages.</p>
       </footer>
     </div>
 
