@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>DevHub Universal - Download Official Developer Tools &
+      Binaries</title>
+    <meta name="title"
+      content="DevHub Universal - Download Official Developer Tools & Binaries" />
+    <meta name="description"
+      content="Download verified, 1-click official developer toolchains, compilers, runtimes, and deployment boilerplates. Fast, direct, zero redirects." />
+    <meta name="keywords"
+      content="download python, install docker, nodejs installer, kubernetes cli, developer tools, compiler binaries" />
+    <link rel="canonical" href="https://yourdomain.com/" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:title"
+      content="DevHub Universal - Instant Developer Binaries" />
+    <meta property="og:description"
+      content="Direct downloads for official developer runtimes, compilers, and IDEs." />
+
+    <!-- Structured Data for Google Software Application Indexing -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DevHub Universal",
+    "url": "https://yourdomain.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://yourdomain.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  </head>
+  <body>
+
+    <!-- 3D Cyber Terrain Canvas -->
+    <canvas id="bg3d"></canvas>
+
+    <div class="container">
+      <header>
+        <div class="brand-badge">
+          <i class="fa-solid fa-layer-group"></i> Centralized Dev Platform
+        </div>
+        <h1>DevHub Universal</h1>
+        <p> Just One Click It Automatically Download's Your Application <br>No
+          ads, no popups, and no waiting screens.</p>
+
+        <div class="header-actions">
+          <span class="sync-status" id="syncStatus">
+            <i class="fa-solid fa-circle-check"></i> Auto-sync Active
+          </span>
+          <button class="sync-btn" id="syncBtn" onclick="triggerManualSync()">
+            <i class="fa-solid fa-rotate"></i> Sync Releases
+          </button>
+        </div>
+      </header>
+
+      <div class="control-dock">
+        <div class="command-bar">
+          <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Quick find anything... (e.g., python, docker, 28 MB, postgres, react)"
+              autocomplete="off"
+              spellcheck="false" />
+            <button class="clear-btn" id="clearSearchBtn" title="Clear Search">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="search-hint-badge">Ctrl + K</span>
+          </div>
+
+          <div class="dock-actions">
+            <select id="sortSelect" class="sort-select"
+              title="Sort application view">
+              <option value="default">Default Order</option>
+              <option value="name-asc">Name (A → Z)</option>
+              <option value="name-desc">Name (Z → A)</option>
+              <option value="size-desc">Largest Payload</option>
+              <option value="size-asc">Smallest Payload</option>
+            </select>
+            <span class="stat-counter" id="activeItemCount">... tools</span>
+          </div>
+        </div>
+
+        <div class="category-container">
+          <button class="scroll-btn prev-btn" id="scrollLeft"
+            title="Scroll left">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="category-scroller" id="tabScroller">
+            <button class="tab-pill active" data-filter="all">
+              <i class="fa-solid fa-border-all"></i> All Tools
+              <span class="pill-count" id="count-all">0</span>
+            </button>
+            {% for key, val in categories.items() %}
+            <button class="tab-pill" data-filter="{{ key }}">
+              {{ val }}
+              <span class="pill-count" id="count-{{ key }}">0</span>
+            </button>
+            {% endfor %}
+          </div>
+
+          <button class="scroll-btn next-btn" id="scrollRight"
+            title="Scroll right">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="contentArea"></div>
+
+      <div id="noResults" class="no-results">
+        <i class="fa-solid fa-box-open"></i>
+        <h3>No tools matched your criteria</h3>
+        <p>Try clearing your search terms or selecting "All Tools".</p>
+      </div>
+
+      <footer>
+        <p>&copy; 2026 DevHub Universal Charan kumar.com &bull; Direct
+          executable payloads with
+          zero intermediate landing pages.</p>
+      </footer>
+    </div>
+
+    <!-- 3D Interactive Mesh Background -->
+    <script>
+    (function init3DBackground() {
+      const canvas = document.getElementById('bg3d');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let w, h;
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      let mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+      window.addEventListener('mousemove', (e) => {
+        mouse.targetX = (e.clientX / w - 0.5) * 2;
+        mouse.targetY = (e.clientY / h - 0.5) * 2;
+      });
+
+      const COLS = 40;
+      const ROWS = 28;
+      const CELL_SIZE = 52;
+      const FOCAL = 340;
+      let flightOffset = 0;
+      let time = 0;
+
+      function getHeight(x, z, t) {
+        const f1 = 0.0035;
+        const f2 = 0.007;
+        const w1 = Math.sin(x * f1 + t * 0.8) * Math.cos(z * f1 + t * 0.5) * 85;
+        const w2 = Math.sin((x + z) * f2 + t * 0.6) * 35;
+        const trough = Math.min(1, Math.hypot(x, 0) / 700);
+        return (w1 + w2) * trough;
+      }
+
+      function loop() {
+        time += 0.012;
+        flightOffset += 1.4;
+
+        mouse.x += (mouse.targetX - mouse.x) * 0.04;
+        mouse.y += (mouse.targetY - mouse.y) * 0.04;
+
+        ctx.fillStyle = '#050814';
+        ctx.fillRect(0, 0, w, h);
+
+        const cx = w / 2;
+        const cy = h * 0.56;
+
+        const camPitch = 0.28 + mouse.y * 0.12;
+        const camYaw = mouse.x * 0.35;
+        const camY = 240;
+
+        const cosYaw = Math.cos(camYaw);
+        const sinYaw = Math.sin(camYaw);
+        const cosPitch = Math.cos(camPitch);
+        const sinPitch = Math.sin(camPitch);
+
+        const grid = [];
+
+        for (let r = 0; r < ROWS; r++) {
+          grid[r] = [];
+          const worldZ = r * CELL_SIZE + 90 - (flightOffset % CELL_SIZE);
+
+          for (let c = 0; c < COLS; c++) {
+            const worldX = (c - COLS / 2) * CELL_SIZE;
+            const totalZ = worldZ + flightOffset;
+            const worldY = getHeight(worldX, totalZ, time);
+
+            const relX = worldX;
+            const relY = worldY - camY;
+            const relZ = worldZ;
+
+            const rotX = relX * cosYaw - relZ * sinYaw;
+            const rotZ1 = relX * sinYaw + relZ * cosYaw;
+
+            const rotY = relY * cosPitch - rotZ1 * sinPitch;
+            const rotZ = relY * sinPitch + rotZ1 * cosPitch;
+
+            if (rotZ <= 10) {
+              grid[r][c] = null;
+              continue;
+            }
+
+            const scale = FOCAL / rotZ;
+            grid[r][c] = {
+              x: cx + rotX * scale,
+              y: cy + rotY * scale,
+              z: rotZ
+            };
+          }
+        }
+
+        for (let r = ROWS - 2; r >= 0; r--) {
+          for (let c = 0; c < COLS - 1; c++) {
+            const p1 = grid[r][c];
+            const p2 = grid[r][c + 1];
+            const p3 = grid[r + 1][c];
+
+            if (!p1 || !p2 || !p3) continue;
+
+            const depthFactor = Math.max(0, 1 - p1.z / (ROWS * CELL_SIZE));
+            const alpha = depthFactor * 0.38;
+
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+            ctx.lineWidth = depthFactor * 1.3;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p3.x, p3.y);
+            ctx.strokeStyle = `rgba(99, 102, 241, ${alpha * 0.75})`;
+            ctx.lineWidth = depthFactor * 0.9;
+            ctx.stroke();
+
+            if (c % 4 === 0 && r % 3 === 0 && depthFactor > 0.45) {
+              ctx.beginPath();
+              ctx.arc(p1.x, p1.y, Math.max(0.6, depthFactor * 1.8), 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(168, 85, 247, ${depthFactor * 0.8})`;
+              ctx.fill();
+            }
+          }
+        }
+
+        requestAnimationFrame(loop);
+      }
+
+      requestAnimationFrame(loop);
+    })();
+  </script>
+
+    <!-- Application Interaction & Real Logo Color Logic -->
+    <script>
+    const catalog = {{ catalog | tojson | safe }};
+    const categoryNames = {{ categories | tojson | safe }};
+
+    let activeFilter = 'all';
+    let searchQuery = '';
+    let currentSort = 'default';
+
+    const contentArea = document.getElementById('contentArea');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const sortSelect = document.getElementById('sortSelect');
+    const activeItemCount = document.getElementById('activeItemCount');
+    const tabPills = document.querySelectorAll('.tab-pill');
+    const noResults = document.getElementById('noResults');
+    const tabScroller = document.getElementById('tabScroller');
+    const scrollLeftBtn = document.getElementById('scrollLeft');
+    const scrollRightBtn = document.getElementById('scrollRight');
+
+    // Real brand color palette dictionary for FontAwesome or non-Devicon items
+    const brandColors = {
+      "pocketbase": "#10b981",
+      "coolify": "#9333ea",
+      "k9s": "#38bdf8",
+      "ollama": "#f8fafc",
+      "lm studio": "#60a5fa",
+      "jan ai": "#34d399",
+      "bruno": "#fb923c",
+      "insomnia": "#5865f2",
+      "hoppscotch": "#38bdf8",
+      "terminal": "#4ade80",
+      "cmder": "#38bdf8",
+      "7-zip": "#facc15",
+      "wireshark": "#1679a7",
+      "rufus": "#e11d48",
+      "obsidian": "#a855f7",
+      "penpot": "#f43f5e",
+      "caddy": "#0099ff",
+      "minio": "#ea1b3d",
+      "localstack": "#10b981",
+      "dokku": "#06b6d4",
+      "caprover": "#38bdf8",
+      "kamal": "#ef4444",
+      "render": "#38bdf8",
+      "serverless": "#fd5750",
+      "surge": "#10b981",
+      "clickhouse": "#ffcc00",
+      "qdrant": "#dc2626",
+      "meilisearch": "#ff4d4f",
+      "beekeeper": "#f59e0b",
+      "opentofu": "#facc15",
+      "trivy": "#0284c7"
+    };
+
+    function resolveIconHTML(iconString, toolName) {
+      let cls = iconString || 'fa-solid fa-cube';
+      const lowerName = (toolName || '').toLowerCase();
+
+      // If it's a devicon, ensure 'colored' class is always attached for its real SVG brand color
+      if (cls.includes('devicon-')) {
+        if (!cls.includes('colored')) {
+          cls += ' colored';
+        }
+        return `<i class="${cls} card-icon"></i>`;
+      }
+
+      // If it's FontAwesome, map to its exact real brand hex color
+      let styleColor = '#38bdf8';
+      for (const [key, colorHex] of Object.entries(brandColors)) {
+        if (lowerName.includes(key)) {
+          styleColor = colorHex;
+          break;
+        }
+      }
+
+      return `<i class="${cls} card-icon" style="color: ${styleColor} !important; text-shadow: 0 0 16px ${styleColor}40;"></i>`;
+    }
+
+    function parseSizeToMB(sizeStr) {
+      if (!sizeStr) return 0;
+      const s = sizeStr.trim().toUpperCase();
+      const num = parseFloat(s);
+      if (isNaN(num)) return 0;
+      if (s.endsWith('GB')) return num * 1024;
+      if (s.endsWith('MB')) return num;
+      if (s.endsWith('KB')) return num / 1024;
+      if (s.endsWith('B')) return num / (1024 * 1024);
+      return num;
+    }
+
+    function initCategoryCounts() {
+      const allCountElem = document.getElementById('count-all');
+      if (allCountElem) allCountElem.textContent = (catalog || []).length;
+
+      Object.keys(categoryNames).forEach(cat => {
+        const countElem = document.getElementById(`count-${cat}`);
+        if (countElem) {
+          const total = (catalog || []).filter(item => (item.category || '').toLowerCase() === cat.toLowerCase()).length;
+          countElem.textContent = total;
+        }
+      });
+    }
+
+    function highlightQuery(text, query) {
+      if (!query || !text) return text;
+      const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(${escaped})`, 'gi');
+      return text.replace(regex, '<mark class="search-match">$1</mark>');
+    }
+
+    scrollLeftBtn.addEventListener('click', () => {
+      tabScroller.scrollBy({ left: -220, behavior: 'smooth' });
+    });
+    scrollRightBtn.addEventListener('click', () => {
+      tabScroller.scrollBy({ left: 220, behavior: 'smooth' });
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k' || (e.key === '/' && document.activeElement !== searchInput)) {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      } else if (e.key === 'Escape' && document.activeElement === searchInput) {
+        searchInput.value = '';
+        searchQuery = '';
+        clearSearchBtn.style.display = 'none';
+        renderCatalog();
+        searchInput.blur();
+      }
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearSearchBtn.style.display = 'none';
+      renderCatalog();
+      searchInput.focus();
+    });
+
+    sortSelect.addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      renderCatalog();
+    });
+
+    async function triggerManualSync() {
+      const btn = document.getElementById('syncBtn');
+      const status = document.getElementById('syncStatus');
+      
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
+      status.innerHTML = '<i class="fa-solid fa-arrows-rotate fa-spin"></i> Fetching updates...';
+      status.style.color = '#38bdf8';
+
+      try {
+        const res = await fetch('/api/sync', { method: 'POST' });
+        const data = await res.json();
+        if (res.ok) {
+          status.innerHTML = '<i class="fa-solid fa-circle-check"></i> Synced with GitHub';
+          status.style.color = '#10b981';
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Complete';
+          setTimeout(() => window.location.reload(), 600);
+        } else {
+          throw new Error(data.message || 'Sync failed');
+        }
+      } catch (err) {
+        status.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Rate limited';
+        status.style.color = '#ef4444';
+        btn.innerHTML = '<i class="fa-solid fa-rotate"></i> Retry';
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    function renderCatalog() {
+      contentArea.innerHTML = '';
+
+      let filtered = (catalog || []).filter(item => {
+        const itemCategory = (item.category || '').toLowerCase();
+        const itemName = (item.name || '').toLowerCase();
+        const itemDesc = (item.desc || '').toLowerCase();
+        const itemSize = (item.size || '').toLowerCase();
+
+        const matchesCategory = (activeFilter === 'all' || itemCategory === activeFilter.toLowerCase());
+        const matchesSearch = itemName.includes(searchQuery) ||
+                              itemDesc.includes(searchQuery) ||
+                              itemCategory.includes(searchQuery) ||
+                              itemSize.includes(searchQuery);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      activeItemCount.textContent = `${filtered.length} tool${filtered.length === 1 ? '' : 's'}`;
+
+      if (filtered.length === 0) {
+        noResults.style.display = 'block';
+        return;
+      }
+      noResults.style.display = 'none';
+
+      if (currentSort === 'name-asc') {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (currentSort === 'name-desc') {
+        filtered.sort((a, b) => b.name.localeCompare(a.name));
+      } else if (currentSort === 'size-desc') {
+        filtered.sort((a, b) => parseSizeToMB(b.size) - parseSizeToMB(a.size));
+      } else if (currentSort === 'size-asc') {
+        filtered.sort((a, b) => parseSizeToMB(a.size) - parseSizeToMB(b.size));
+      }
+
+      const grouped = {};
+      filtered.forEach(item => {
+        const cat = item.category || 'other';
+        if (!grouped[cat]) grouped[cat] = [];
+        grouped[cat].push(item);
+      });
+
+      Object.keys(categoryNames).forEach(catKey => {
+        if (grouped[catKey] && grouped[catKey].length > 0) {
+          const section = document.createElement('div');
+          section.className = 'category-section';
+
+          section.innerHTML = `
+            <div class="section-header">
+              <h2>${categoryNames[catKey]}</h2>
+              <span class="item-counter">${grouped[catKey].length} matched</span>
+            </div>
+            <div class="grid" id="grid-${catKey}"></div>
+          `;
+
+          contentArea.appendChild(section);
+          const grid = section.querySelector(`#grid-${catKey}`);
+
+          grouped[catKey].forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const downloadUrl = item.action ? `/download/${item.action}` : (item.url || '#');
+            const isTemplate = Boolean(item.action);
+
+            const btnHtml = isTemplate
+              ? `<a href="${downloadUrl}" download class="download-action"><i class="fa-solid fa-file-code"></i> Download Template</a>`
+              : `<a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="download-action"><i class="fa-solid fa-download"></i> Quick Install</a>`;
+
+            const iconMarkup = resolveIconHTML(item.icon, item.name);
+            const versionTag = item.version || 'vLatest';
+
+            const highlightedTitle = highlightQuery(item.name || 'Unnamed Tool', searchQuery);
+            const highlightedDesc = highlightQuery(item.desc || 'No description available.', searchQuery);
+
+            const sizeChip = item.size 
+              ? `<span class="size-chip"><i class="fa-solid fa-hard-drive"></i> ${item.size}</span>`
+              : '';
+
+            card.innerHTML = `
+              <div class="card-top">
+                ${iconMarkup}
+                <div class="badges-group">
+                  <span class="version-chip">${versionTag}</span>
+                  ${sizeChip}
+                </div>
+              </div>
+              <h3>${highlightedTitle}</h3>
+              <p>${highlightedDesc}</p>
+              ${btnHtml}
+            `;
+            grid.appendChild(card);
+          });
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      clearSearchBtn.style.display = searchQuery.length > 0 ? 'inline-flex' : 'none';
+      renderCatalog();
+    });
+
+    tabPills.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabPills.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.getAttribute('data-filter');
+        btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        renderCatalog();
+      });
+    });
+
+    initCategoryCounts();
+    renderCatalog();
+  </script>
+  </body>
+</html>

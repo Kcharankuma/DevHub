@@ -1,0 +1,1081 @@
+[
+  {
+    "name": "Python",
+    "version": "v3.13.2",
+    "size": "27.8 MB",
+    "category": "programming",
+    "icon": "devicon-python-plain colored",
+    "desc": "Standard 64-bit installer executable with pip & standard libraries.",
+    "url": "https://www.python.org/ftp/python/3.13.2/python-3.13.2-amd64.exe"
+  },
+  {
+    "name": "Java OpenJDK 21 LTS",
+    "version": "jdk-21.0.12.1+1",
+    "size": "46.4 MB",
+    "category": "programming",
+    "icon": "devicon-java-plain colored",
+    "desc": "Adoptium Eclipse Temurin OpenJDK 21 LTS 64-bit MSI installer.",
+    "github_repo": "adoptium/temurin21-binaries",
+    "asset_pattern": "windows_hotspot_21",
+    "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-debugimage_aarch64_windows_hotspot_21.0.12.1_1.zip"
+  },
+  {
+    "name": "Java OpenJDK 17 LTS",
+    "version": "jdk-17.0.20.1+1",
+    "size": "43.6 MB",
+    "category": "programming",
+    "icon": "devicon-java-plain colored",
+    "desc": "Adoptium Eclipse Temurin OpenJDK 17 LTS enterprise production binary.",
+    "github_repo": "adoptium/temurin17-binaries",
+    "asset_pattern": "windows_hotspot_17",
+    "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-debugimage_x64_windows_hotspot_17.0.20.1_1.zip"
+  },
+  {
+    "name": "Node.js (Active LTS)",
+    "version": "v22.14.0",
+    "size": "31.2 MB",
+    "category": "programming",
+    "icon": "devicon-nodejs-plain colored",
+    "desc": "Node.js official LTS 64-bit MSI installer with npm included.",
+    "url": "https://nodejs.org/dist/v22.14.0/node-v22.14.0-x64.msi"
+  },
+  {
+    "name": "Node.js (Current)",
+    "version": "v23.8.0",
+    "size": "32.4 MB",
+    "category": "programming",
+    "icon": "devicon-nodejs-plain colored",
+    "desc": "Cutting-edge Node.js runtime with modern ECMAScript features.",
+    "url": "https://nodejs.org/dist/v23.8.0/node-v23.8.0-x64.msi"
+  },
+  {
+    "name": "Go (Golang)",
+    "version": "v1.24.0",
+    "size": "146.0 MB",
+    "category": "programming",
+    "icon": "devicon-go-original-wordmark colored",
+    "desc": "Google Go compiler and tools 64-bit direct MSI installer.",
+    "url": "https://go.dev/dl/go1.24.0.windows-amd64.msi"
+  },
+  {
+    "name": "Rust (Rustup)",
+    "version": "v1.85.0",
+    "size": "10.4 MB",
+    "category": "programming",
+    "icon": "devicon-rust-plain",
+    "desc": "Rustup toolchain manager and compiler 64-bit setup executable.",
+    "url": "https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe"
+  },
+  {
+    "name": "C / C++ (MinGW-w64 GCC)",
+    "version": "16.2.0posix-14.0.0-ucrt-r1",
+    "size": "105.0 MB",
+    "category": "programming",
+    "icon": "devicon-cplusplus-plain colored",
+    "desc": "GCC & G++ compiler complete offline build standalone archive.",
+    "github_repo": "brechtsanders/winlibs_mingw",
+    "asset_pattern": "x86_64-posix-seh-gcc",
+    "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/16.2.0posix-14.0.0-ucrt-r1/winlibs-x86_64-posix-seh-gcc-16.2.0-mingw-w64ucrt-14.0.0-r1.7z"
+  },
+  {
+    "name": "LLVM Clang Compiler",
+    "version": "llvmorg-23.1.0",
+    "size": "312.0 MB",
+    "category": "programming",
+    "icon": "devicon-cplusplus-plain colored",
+    "desc": "LLVM compiler infrastructure, Clang C/C++ frontend & lld linker.",
+    "github_repo": "llvm/llvm-project",
+    "asset_pattern": "LLVM-19"
+  },
+  {
+    "name": ".NET SDK 9.0",
+    "version": "v9.0.200",
+    "size": "228.0 MB",
+    "category": "programming",
+    "icon": "devicon-csharp-plain colored",
+    "desc": "Microsoft .NET 9.0 SDK & C# tools direct 64-bit installer.",
+    "url": "https://download.visualstudio.microsoft.com/download/pr/dotnet-sdk-9.0.200-win-x64.exe"
+  },
+  {
+    "name": "PHP 8.4",
+    "version": "v8.4.4",
+    "size": "32.1 MB",
+    "category": "programming",
+    "icon": "devicon-php-plain colored",
+    "desc": "PHP Thread-Safe 64-bit complete engine distribution package.",
+    "url": "https://windows.php.net/downloads/releases/php-8.4.4-Win32-vs17-x64.zip"
+  },
+  {
+    "name": "Ruby with DevKit",
+    "version": "RubyInstaller-4.0.6-1",
+    "size": "20.6 MB",
+    "category": "programming",
+    "icon": "devicon-ruby-plain colored",
+    "desc": "Ruby with DevKit C-extension compiler 64-bit setup executable.",
+    "github_repo": "oneclick/rubyinstaller2",
+    "asset_pattern": "x64.exe",
+    "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.6-1/rubyinstaller-4.0.6-1-x64.exe"
+  },
+  {
+    "name": "Zig Compiler",
+    "version": "v0.13.0",
+    "size": "44.6 MB",
+    "category": "programming",
+    "icon": "devicon-zig-original colored",
+    "desc": "General-purpose systems programming language zip distribution.",
+    "url": "https://ziglang.org/download/0.13.0/zig-windows-x86_64-0.13.0.zip"
+  },
+  {
+    "name": "Julia Language",
+    "version": "v1.11.3",
+    "size": "108.0 MB",
+    "category": "programming",
+    "icon": "devicon-julia-plain colored",
+    "desc": "High-performance dynamic language for numerical and data computing.",
+    "url": "https://julialang-s3.julialang.org/bin/winnt/x64/1.11/julia-1.11.3-win64.exe"
+  },
+  {
+    "name": "R Project",
+    "version": "v4.4.2",
+    "size": "82.3 MB",
+    "category": "programming",
+    "icon": "devicon-r-plain colored",
+    "desc": "Statistical computing and graphics environment installer executable.",
+    "url": "https://cran.r-project.org/bin/windows/base/R-4.4.2-win.exe"
+  },
+  {
+    "name": "Kotlin Compiler",
+    "version": "v2.4.10",
+    "size": "151.2 KB",
+    "category": "programming",
+    "icon": "devicon-kotlin-plain colored",
+    "desc": "JetBrains Kotlin standalone native command-line compiler zip.",
+    "github_repo": "JetBrains/kotlin",
+    "asset_pattern": "kotlin-compiler",
+    "url": "https://github.com/JetBrains/kotlin/releases/download/v2.4.10/kotlin-compiler-2.4.10.spdx.json"
+  },
+  {
+    "name": "Git for Windows",
+    "version": "v2.55.0.windows.5",
+    "size": "62.3 MB",
+    "category": "programming",
+    "icon": "devicon-git-plain colored",
+    "desc": "Git SCM command line and Bash tool direct 64-bit executable.",
+    "github_repo": "git-for-windows/git",
+    "asset_pattern": "64-bit.exe",
+    "url": "https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.5/Git-2.55.0.5-64-bit.exe"
+  },
+  {
+    "name": "VS Code",
+    "version": "v1.96.2",
+    "size": "95.4 MB",
+    "category": "ide",
+    "icon": "devicon-vscode-plain colored",
+    "desc": "Microsoft Code Editor - Dynamic stable direct executable installer.",
+    "url": "https://update.code.visualstudio.com/latest/win32-x64-user/stable"
+  },
+  {
+    "name": "PyCharm Community",
+    "version": "v2024.3.3",
+    "size": "652.0 MB",
+    "category": "ide",
+    "icon": "devicon-pycharm-plain colored",
+    "desc": "JetBrains PyCharm IDE standalone installer for Python developers.",
+    "url": "https://download.jetbrains.com/python/pycharm-community-2024.3.3.exe"
+  },
+  {
+    "name": "IntelliJ IDEA Community",
+    "version": "v2024.3.3",
+    "size": "875.0 MB",
+    "category": "ide",
+    "icon": "devicon-intellij-plain colored",
+    "desc": "JetBrains IntelliJ IDEA standalone executable for Java & Kotlin.",
+    "url": "https://download.jetbrains.com/idea/ideaIC-2024.3.3.exe"
+  },
+  {
+    "name": "Visual Studio Community",
+    "version": "v17.12.3",
+    "size": "4.2 MB",
+    "category": "ide",
+    "icon": "devicon-visualstudio-plain colored",
+    "desc": "Full-featured, extensible IDE for .NET, C++, Unity, and Windows apps.",
+    "url": "https://aka.ms/vs/17/release/vs_community.exe"
+  },
+  {
+    "name": "Anaconda Distribution",
+    "version": "v2024.10",
+    "size": "1.0 GB",
+    "category": "ide",
+    "icon": "devicon-anaconda-original colored",
+    "desc": "Complete Anaconda setup binary with Conda & Jupyter.",
+    "url": "https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Windows-x86_64.exe"
+  },
+  {
+    "name": "Sublime Text 4",
+    "version": "Build 4180",
+    "size": "18.4 MB",
+    "category": "ide",
+    "icon": "devicon-sublimetext-plain colored",
+    "desc": "Fast, lightweight code editor standalone installer executable.",
+    "url": "https://download.sublimetext.com/sublime_text_build_4180_x64_setup.exe"
+  },
+  {
+    "name": "Notepad++",
+    "version": "v8.9.8",
+    "size": "6.6 MB",
+    "category": "ide",
+    "icon": "devicon-c-plain colored",
+    "desc": "Lightweight source code editor direct 64-bit installer.",
+    "github_repo": "notepad-plus-plus/notepad-plus-plus",
+    "asset_pattern": "Installer.x64.exe",
+    "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.9.8/npp.8.9.8.Installer.x64.exe"
+  },
+  {
+    "name": "Neovim",
+    "version": "v0.12.5",
+    "size": "12.0 MB",
+    "category": "ide",
+    "icon": "devicon-vim-plain colored",
+    "desc": "Extensible Vim-based modal text editor standalone zip package.",
+    "github_repo": "neovim/neovim",
+    "asset_pattern": "nvim-win64.zip",
+    "url": "https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-win64.zip"
+  },
+  {
+    "name": "Eclipse IDE for Java",
+    "version": "v2024-12",
+    "size": "134.0 MB",
+    "category": "ide",
+    "icon": "devicon-eclipse-plain colored",
+    "desc": "Eclipse IDE package for enterprise Java development.",
+    "url": "https://ftp.osuosl.org/pub/eclipse/oomph/epp/2024-12/R/eclipse-inst-jre-win64.exe"
+  },
+  {
+    "name": "React 19 + Vite Starter",
+    "version": "v19.0.0",
+    "size": "14.2 MB",
+    "category": "frontend",
+    "icon": "devicon-react-original colored",
+    "desc": "Component-based UI library bundled with Vite tooling template.",
+    "url": "https://github.com/vitejs/vite/archive/refs/heads/main.zip"
+  },
+  {
+    "name": "Next.js Fullstack Bundle",
+    "version": "v15.1.0",
+    "size": "34.8 MB",
+    "category": "frontend",
+    "icon": "devicon-nextjs-original-wordmark",
+    "desc": "React framework with App Router and server rendering setup.",
+    "url": "https://github.com/vercel/next.js/archive/refs/heads/canary.zip"
+  },
+  {
+    "name": "Vue 3 Core Project",
+    "version": "v3.5.13",
+    "size": "8.6 MB",
+    "category": "frontend",
+    "icon": "devicon-vuejs-plain colored",
+    "desc": "Progressive JavaScript framework archive with Composition API setup.",
+    "url": "https://github.com/vuejs/core/archive/refs/heads/main.zip"
+  },
+  {
+    "name": "Nuxt 3 Framework",
+    "version": "v3.15.0",
+    "size": "1.2 MB",
+    "category": "frontend",
+    "icon": "devicon-nuxtjs-plain colored",
+    "desc": "Vue framework with SSR, auto-imports, and edge-ready deployment.",
+    "url": "https://github.com/nuxt/starter/archive/refs/heads/v3.zip"
+  },
+  {
+    "name": "Angular CLI Kit",
+    "version": "v19.1.0",
+    "size": "18.1 MB",
+    "category": "frontend",
+    "icon": "devicon-angularjs-plain colored",
+    "desc": "Enterprise component-driven application boilerplate bundle.",
+    "url": "https://github.com/angular/angular-cli/archive/refs/heads/main.zip"
+  },
+  {
+    "name": "Astro Web Framework",
+    "version": "v5.1.0",
+    "size": "26.4 MB",
+    "category": "frontend",
+    "icon": "devicon-astro-plain colored",
+    "desc": "Content-driven web framework with zero-JS island architecture.",
+    "url": "https://github.com/withastro/astro/archive/refs/heads/main.zip"
+  },
+  {
+    "name": "SolidJS Starter",
+    "version": "v1.9.3",
+    "size": "3.8 MB",
+    "category": "frontend",
+    "icon": "devicon-solidjs-plain colored",
+    "desc": "Reactive JavaScript library for building clean interfaces.",
+    "url": "https://github.com/solidjs/solid/archive/refs/heads/main.zip"
+  },
+  {
+    "name": "Bootstrap 5.3 Distribution",
+    "version": "v5.3.8",
+    "size": "1.4 MB",
+    "category": "frontend",
+    "icon": "devicon-bootstrap-plain colored",
+    "desc": "Compiled CSS and JS files with responsive grid system.",
+    "github_repo": "twbs/bootstrap",
+    "asset_pattern": "dist.zip",
+    "url": "https://github.com/twbs/bootstrap/releases/download/v5.3.8/bootstrap-5.3.8-dist.zip"
+  },
+  {
+    "name": "Bulma CSS Framework",
+    "version": "1.0.4",
+    "size": "688.9 KB",
+    "category": "frontend",
+    "icon": "devicon-bulma-plain colored",
+    "desc": "Modern CSS framework based on Flexbox without JavaScript dependencies.",
+    "github_repo": "jgthms/bulma",
+    "asset_pattern": ".zip",
+    "url": "https://github.com/jgthms/bulma/releases/download/1.0.4/bulma-1.0.4.zip"
+  },
+  {
+    "name": "Svelte 5 Starter",
+    "version": "v5.0.0",
+    "size": "1.2 KB",
+    "category": "frontend",
+    "icon": "devicon-svelte-plain colored",
+    "desc": "Reactive web applications with component compiler setup.",
+    "action": "svelte_starter"
+  },
+  {
+    "name": "HTML5 & CSS3 Starter",
+    "version": "v5.0 Ready",
+    "size": "0.8 KB",
+    "category": "frontend",
+    "icon": "devicon-html5-plain colored",
+    "desc": "HTML5 boilerplate with normalize styles and responsive setup.",
+    "action": "html_boilerplate"
+  },
+  {
+    "name": "Tailwind CSS Config",
+    "version": "v4.0.0",
+    "size": "0.5 KB",
+    "category": "frontend",
+    "icon": "devicon-tailwindcss-plain colored",
+    "desc": "Pre-configured tailwind.config.js, Vite setup, and compiled style.",
+    "action": "tailwind_bundle"
+  },
+  {
+    "name": "Alpine.js Standalone",
+    "version": "v3.14.3",
+    "size": "0.6 KB",
+    "category": "frontend",
+    "icon": "devicon-alpinejs-plain colored",
+    "desc": "Lightweight reactive JavaScript tool with declarative HTML syntax file.",
+    "action": "alpine_starter"
+  },
+  {
+    "name": "Normalize.css Standard",
+    "version": "v8.0.1",
+    "size": "1.3 KB",
+    "category": "frontend",
+    "icon": "devicon-css3-plain colored",
+    "desc": "CSS file rendering elements consistently across all web browsers.",
+    "action": "normalize_css"
+  },
+  {
+    "name": "Deno Engine",
+    "version": "v2.9.6",
+    "size": "40.6 MB",
+    "category": "backend",
+    "icon": "devicon-denojs-original",
+    "desc": "Secure JavaScript and TypeScript runtime standalone executable.",
+    "github_repo": "denoland/deno",
+    "asset_pattern": "x86_64-pc-windows-msvc.zip",
+    "url": "https://github.com/denoland/deno/releases/download/v2.9.6/deno-x86_64-pc-windows-msvc.zip"
+  },
+  {
+    "name": "Bun Engine",
+    "version": "bun-v1.4.2",
+    "size": "38.0 MB",
+    "category": "backend",
+    "icon": "devicon-bun-plain colored",
+    "desc": "Fast all-in-one JavaScript runtime, bundler, and package manager.",
+    "github_repo": "oven-sh/bun",
+    "asset_pattern": "bun-windows-x64.zip",
+    "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.2/bun-windows-x64.zip"
+  },
+  {
+    "name": "FastAPI Boilerplate",
+    "version": "v0.115.8",
+    "size": "0.4 KB",
+    "category": "backend",
+    "icon": "devicon-fastapi-plain colored",
+    "desc": "Python FastAPI backend starter with routing, Pydantic & CORS.",
+    "action": "fastapi_starter"
+  },
+  {
+    "name": "Express Server Template",
+    "version": "v4.21.0",
+    "size": "0.6 KB",
+    "category": "backend",
+    "icon": "devicon-express-original",
+    "desc": "Node.js Express starter with CORS, JSON parsing, and routing.",
+    "action": "express_starter"
+  },
+  {
+    "name": "PostgreSQL Server",
+    "version": "v16.4",
+    "size": "364.0 MB",
+    "category": "database",
+    "icon": "devicon-postgresql-plain colored",
+    "desc": "Enterprise open-source relational database installer.",
+    "url": "https://sbp.enterprisedb.com/getfile.jsp?fileid=1258894"
+  },
+  {
+    "name": "MySQL Community Server",
+    "version": "v8.4.4 LTS",
+    "size": "472.0 MB",
+    "category": "database",
+    "icon": "devicon-mysql-plain colored",
+    "desc": "Official MySQL standalone server MSI installer package.",
+    "url": "https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.4-winx64.msi"
+  },
+  {
+    "name": "MariaDB Server",
+    "version": "v11.4.5",
+    "size": "86.4 MB",
+    "category": "database",
+    "icon": "devicon-mariadb-plain colored",
+    "desc": "High-performance community relational database MSI installer.",
+    "url": "https://dlm.mariadb.com/MariaDB/mariadb-11.4.5/winx64-packages/mariadb-11.4.5-winx64.msi"
+  },
+  {
+    "name": "MongoDB Community",
+    "version": "v8.0.4",
+    "size": "586.0 MB",
+    "category": "database",
+    "icon": "devicon-mongodb-plain colored",
+    "desc": "Document-oriented NoSQL database server MSI package.",
+    "url": "https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.0.4-signed.msi"
+  },
+  {
+    "name": "SQLite Tools",
+    "version": "v3.49.0",
+    "size": "2.1 MB",
+    "category": "database",
+    "icon": "devicon-sqlite-plain colored",
+    "desc": "Command-line shell and binary utility package zip.",
+    "url": "https://www.sqlite.org/2025/sqlite-tools-win-x64-3490000.zip"
+  },
+  {
+    "name": "Redis Server",
+    "version": "8.10.1",
+    "size": "7.3 MB",
+    "category": "database",
+    "icon": "devicon-redis-plain colored",
+    "desc": "In-memory data store, cache, and message broker zip bundle.",
+    "github_repo": "zkteco-home/redis-windows",
+    "asset_pattern": "Windows-x64.zip"
+  },
+  {
+    "name": "ClickHouse Analytics Engine",
+    "version": "v26.3.32.14-lts",
+    "size": "92.4 MB",
+    "category": "database",
+    "icon": "fa-solid fa-chart-column",
+    "desc": "Columnar database for real-time analytical reporting.",
+    "github_repo": "ClickHouse/ClickHouse",
+    "asset_pattern": "windows-amd64.exe"
+  },
+  {
+    "name": "Qdrant Vector DB",
+    "version": "v1.19.1",
+    "size": "28.3 MB",
+    "category": "database",
+    "icon": "fa-solid fa-brain",
+    "desc": "Vector similarity search engine and embeddings database binary.",
+    "github_repo": "qdrant/qdrant",
+    "asset_pattern": "pc-windows-msvc.zip",
+    "url": "https://github.com/qdrant/qdrant/releases/download/v1.19.1/qdrant-x86_64-pc-windows-msvc.zip"
+  },
+  {
+    "name": "Meilisearch Engine",
+    "version": "v1.53.1",
+    "size": "124.2 MB",
+    "category": "database",
+    "icon": "fa-solid fa-bolt",
+    "desc": "Fast, typo-tolerant search engine database binary executable.",
+    "github_repo": "meilisearch/meilisearch",
+    "asset_pattern": "windows-amd64.exe",
+    "url": "https://github.com/meilisearch/meilisearch/releases/download/v1.53.1/meilisearch-enterprise-windows-amd64.exe"
+  },
+  {
+    "name": "DBeaver Community",
+    "version": "26.2.0",
+    "size": "115.0 MB",
+    "category": "database",
+    "icon": "devicon-dbeaver-plain colored",
+    "desc": "Universal database client for SQL, PostgreSQL, MySQL, and MongoDB.",
+    "github_repo": "dbeaver/dbeaver",
+    "asset_pattern": "-x86_64-setup.exe"
+  },
+  {
+    "name": "pgAdmin 4 GUI",
+    "version": "v8.14",
+    "size": "228.0 MB",
+    "category": "database",
+    "icon": "devicon-postgresql-plain colored",
+    "desc": "Desktop management and administration GUI for PostgreSQL.",
+    "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v8.14/windows/pgadmin4-8.14-x64.exe"
+  },
+  {
+    "name": "MongoDB Compass GUI",
+    "version": "v1.45.2",
+    "size": "136.0 MB",
+    "category": "database",
+    "icon": "devicon-mongodb-plain colored",
+    "desc": "Official GUI client for exploring and querying MongoDB collections.",
+    "url": "https://downloads.mongodb.com/compass/mongodb-compass-1.45.2-win32-x64.exe"
+  },
+  {
+    "name": "Beekeeper Studio GUI",
+    "version": "v6.0.5",
+    "size": "89.2 MB",
+    "category": "database",
+    "icon": "fa-solid fa-database",
+    "desc": "Smooth, privacy-first SQL editor and management app for developers.",
+    "github_repo": "beekeeper-studio/beekeeper-studio",
+    "asset_pattern": "Setup.exe"
+  },
+  {
+    "name": "Docker Desktop",
+    "version": "v4.37.2",
+    "size": "580.0 MB",
+    "category": "devops",
+    "icon": "devicon-docker-plain colored",
+    "desc": "Official Docker container runtime, build engine, and Compose desktop manager.",
+    "url": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe"
+  },
+  {
+    "name": "Podman Desktop",
+    "version": "v1.14.2",
+    "size": "118.0 MB",
+    "category": "devops",
+    "icon": "devicon-podman-plain colored",
+    "desc": "Daemonless, rootless container manager and Kubernetes testing environment.",
+    "github_repo": "containers/podman-desktop",
+    "asset_pattern": "setup.exe"
+  },
+  {
+    "name": "Rancher Desktop",
+    "version": "v1.24.0",
+    "size": "485.0 MB",
+    "category": "devops",
+    "icon": "devicon-rancher-original colored",
+    "desc": "Container management and local Kubernetes runtime on the desktop.",
+    "github_repo": "rancher-sandbox/rancher-desktop",
+    "asset_pattern": "Setup.exe"
+  },
+  {
+    "name": "Kubernetes CLI (kubectl)",
+    "version": "v1.32.0",
+    "size": "53.2 MB",
+    "category": "devops",
+    "icon": "devicon-kubernetes-plain colored",
+    "desc": "Official production-grade cluster control and container orchestration CLI.",
+    "url": "https://dl.k8s.io/release/v1.32.0/bin/windows/amd64/kubectl.exe"
+  },
+  {
+    "name": "Minikube (Local K8s)",
+    "version": "v1.39.0",
+    "size": "51.8 MB",
+    "category": "devops",
+    "icon": "devicon-kubernetes-plain colored",
+    "desc": "One-node local Kubernetes cluster installer for development workflows.",
+    "github_repo": "kubernetes/minikube",
+    "asset_pattern": "installer.exe",
+    "url": "https://github.com/kubernetes/minikube/releases/download/v1.39.0/minikube-installer.exe"
+  },
+  {
+    "name": "Helm Package Manager",
+    "version": "v3.17.0",
+    "size": "18.2 MB",
+    "category": "devops",
+    "icon": "devicon-helm-original colored",
+    "desc": "Kubernetes package manager for installing and managing cluster charts.",
+    "url": "https://get.helm.sh/helm-v3.17.0-windows-amd64.zip"
+  },
+  {
+    "name": "k9s Terminal UI",
+    "version": "v0.51.0",
+    "size": "40.4 MB",
+    "category": "devops",
+    "icon": "fa-solid fa-cubes",
+    "desc": "Fast, interactive terminal-based UI to monitor and manage Kubernetes clusters.",
+    "github_repo": "derailed/k9s",
+    "asset_pattern": "Windows_amd64.zip",
+    "url": "https://github.com/derailed/k9s/releases/download/v0.51.0/k9s_Windows_amd64.zip"
+  },
+  {
+    "name": "Lens K8s IDE",
+    "version": "v2024.12",
+    "size": "148.0 MB",
+    "category": "devops",
+    "icon": "fa-solid fa-binoculars",
+    "desc": "The desktop control panel and IDE for multi-cloud Kubernetes clusters.",
+    "url": "https://api.k8slens.dev/binaries/Lens%20Setup.exe"
+  },
+  {
+    "name": "Terraform CLI",
+    "version": "v1.10.5",
+    "size": "26.4 MB",
+    "category": "devops",
+    "icon": "devicon-terraform-plain colored",
+    "desc": "Infrastructure as Code tool to build, change, and version cloud setups.",
+    "url": "https://releases.hashicorp.com/terraform/1.10.5/terraform_1.10.5_windows_amd64.zip"
+  },
+  {
+    "name": "OpenTofu CLI",
+    "version": "v1.12.6",
+    "size": "33.8 MB",
+    "category": "devops",
+    "icon": "fa-solid fa-code-fork",
+    "desc": "Open-source, community-driven fork of Terraform under Linux Foundation.",
+    "github_repo": "opentofu/opentofu",
+    "asset_pattern": "windows_amd64.zip",
+    "url": "https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_windows_amd64.zip"
+  },
+  {
+    "name": "Packer CLI",
+    "version": "v1.11.2",
+    "size": "34.5 MB",
+    "category": "devops",
+    "icon": "devicon-packer-original colored",
+    "desc": "Automate automated machine image creation across multiple platforms.",
+    "url": "https://releases.hashicorp.com/packer/1.11.2/packer_1.11.2_windows_amd64.zip"
+  },
+  {
+    "name": "Vagrant",
+    "version": "v2.4.3",
+    "size": "72.4 MB",
+    "category": "devops",
+    "icon": "devicon-vagrant-plain colored",
+    "desc": "Tool for building and managing virtual machine development environments.",
+    "url": "https://releases.hashicorp.com/vagrant/2.4.3/vagrant_2.4.3_windows_amd64.msi"
+  },
+  {
+    "name": "Trivy Scanner",
+    "version": "v0.74.0",
+    "size": "49.3 MB",
+    "category": "devops",
+    "icon": "fa-solid fa-shield-halved",
+    "desc": "Comprehensive vulnerability, secret, and misconfiguration security scanner.",
+    "github_repo": "aquasecurity/trivy",
+    "asset_pattern": "windows-64bit.zip",
+    "url": "https://github.com/aquasecurity/trivy/releases/download/v0.74.0/trivy_0.74.0_windows-64bit.zip"
+  },
+  {
+    "name": "Docker Compose Boilerplate",
+    "version": "v3.8 Spec",
+    "size": "0.9 KB",
+    "category": "devops",
+    "icon": "devicon-docker-plain",
+    "desc": "Production multi-container compose template with web, database & Redis cache.",
+    "action": "docker_compose"
+  },
+  {
+    "name": "Coolify Setup",
+    "version": "v4.0.0",
+    "size": "0.3 KB",
+    "category": "deployment",
+    "icon": "fa-solid fa-server",
+    "desc": "Self-hosted open source alternative to Heroku & Render. 1-click install script.",
+    "action": "coolify_install"
+  },
+  {
+    "name": "PocketBase Server",
+    "version": "v0.40.3",
+    "size": "12.2 MB",
+    "category": "deployment",
+    "icon": "fa-solid fa-box-open",
+    "desc": "1-file open-source backend with SQLite, real-time subscriptions, and auth.",
+    "github_repo": "pocketbase/pocketbase",
+    "asset_pattern": "windows_amd64.zip",
+    "url": "https://github.com/pocketbase/pocketbase/releases/download/v0.40.3/pocketbase_0.40.3_windows_amd64.zip"
+  },
+  {
+    "name": "Fly.io CLI (flyctl)",
+    "version": "v0.4.99",
+    "size": "49.0 MB",
+    "category": "deployment",
+    "icon": "devicon-flyio-plain colored",
+    "desc": "Deploy full-stack apps and Docker containers globally near users.",
+    "github_repo": "superfly/flyctl",
+    "asset_pattern": "windows_x86_64.zip",
+    "url": "https://github.com/superfly/flyctl/releases/download/v0.4.99/flyctl_0.4.99_Windows_x86_64.zip"
+  },
+  {
+    "name": "Supabase CLI",
+    "version": "v2.116.0",
+    "size": "55.7 MB",
+    "category": "deployment",
+    "icon": "devicon-supabase-plain colored",
+    "desc": "Local development, schema migrations, and edge function deploy CLI.",
+    "github_repo": "supabase/cli",
+    "asset_pattern": "windows_amd64.zip",
+    "url": "https://github.com/supabase/cli/releases/download/v2.116.0/supabase_2.116.0_windows_amd64.zip"
+  },
+  {
+    "name": "Railway CLI",
+    "version": "v5.49.2",
+    "size": "6.0 MB",
+    "category": "deployment",
+    "icon": "fa-solid fa-train",
+    "desc": "Deploy, configure environments, and link services directly to Railway.",
+    "github_repo": "railwayapp/cli",
+    "asset_pattern": "windows-msvc.zip",
+    "url": "https://github.com/railwayapp/cli/releases/download/v5.49.2/railway-v5.49.2-aarch64-pc-windows-msvc.zip"
+  },
+  {
+    "name": "Turso CLI (LibSQL)",
+    "version": "v1.0.32",
+    "size": "14.2 MB",
+    "category": "deployment",
+    "icon": "fa-solid fa-database",
+    "desc": "Serverless edge SQLite database management CLI for distributed workloads.",
+    "github_repo": "tursodatabase/turso-cli",
+    "asset_pattern": "windows-amd64.zip"
+  },
+  {
+    "name": "GitHub CLI (gh)",
+    "version": "v2.100.0",
+    "size": "14.8 MB",
+    "category": "deployment",
+    "icon": "devicon-github-original",
+    "desc": "Manage repositories, pull requests, actions, and deployments from terminal.",
+    "github_repo": "cli/cli",
+    "asset_pattern": "windows_amd64.msi",
+    "url": "https://github.com/cli/cli/releases/download/v2.100.0/gh_2.100.0_windows_amd64.msi"
+  },
+  {
+    "name": "Heroku CLI",
+    "version": "v9.3.1",
+    "size": "42.8 MB",
+    "category": "deployment",
+    "icon": "devicon-heroku-plain colored",
+    "desc": "Command-line tool to build, manage, and scale applications on Heroku.",
+    "url": "https://cli-assets.heroku.com/heroku-x64.exe"
+  },
+  {
+    "name": "Caddy Web Server",
+    "version": "v2.11.4",
+    "size": "16.7 MB",
+    "category": "deployment",
+    "icon": "fa-solid fa-shield",
+    "desc": "High-performance reverse proxy and web server with automatic HTTPS.",
+    "github_repo": "caddyserver/caddy",
+    "asset_pattern": "windows_amd64.zip",
+    "url": "https://github.com/caddyserver/caddy/releases/download/v2.11.4/caddy_2.11.4_windows_amd64.zip"
+  },
+  {
+    "name": "Nginx for Windows",
+    "version": "v1.26.2",
+    "size": "1.9 MB",
+    "category": "deployment",
+    "icon": "devicon-nginx-original colored",
+    "desc": "High-performance HTTP server, reverse proxy, and load balancer zip.",
+    "url": "https://nginx.org/download/nginx-1.26.2.zip"
+  },
+  {
+    "name": "MinIO S3 Server",
+    "version": "RELEASE.2024",
+    "size": "98.5 MB",
+    "category": "deployment",
+    "icon": "fa-solid fa-hard-drive",
+    "desc": "High-performance, S3-compatible self-hosted object storage binary.",
+    "url": "https://dl.min.io/server/minio/release/windows-amd64/minio.exe"
+  },
+  {
+    "name": "LocalStack CLI",
+    "version": "v2026.8.0",
+    "size": "21.2 MB",
+    "category": "deployment",
+    "icon": "fa-solid fa-cloud-arrow-up",
+    "desc": "Fully functional local AWS cloud stack for testing cloud-native apps.",
+    "github_repo": "localstack/localstack-cli",
+    "asset_pattern": "windows-amd64",
+    "url": "https://github.com/localstack/localstack-cli/releases/download/v2026.8.0/localstack-cli-2026.8.0-windows-amd64-onefile.zip"
+  },
+  {
+    "name": "Deno Deploy (deployctl)",
+    "version": "v1.13.0",
+    "size": "0.3 KB",
+    "category": "deployment",
+    "icon": "devicon-denojs-original",
+    "desc": "Deploy JavaScript/TypeScript APIs globally to edge serverless workers.",
+    "action": "deployctl_script"
+  },
+  {
+    "name": "Dokku PaaS Setup",
+    "version": "v0.34.0",
+    "size": "0.3 KB",
+    "category": "deployment",
+    "icon": "fa-solid fa-anchor",
+    "desc": "Smallest PaaS implementation for simple Git-push deployments on any VPS.",
+    "action": "dokku_install"
+  },
+  {
+    "name": "CapRover PaaS Config",
+    "version": "v2.2.3",
+    "size": "0.2 KB",
+    "category": "deployment",
+    "icon": "fa-solid fa-ship",
+    "desc": "Automated Docker PaaS configuration boilerplate (captain-definition).",
+    "action": "caprover_config"
+  },
+  {
+    "name": "Kamal Deployment Config",
+    "version": "v2.4.0",
+    "size": "0.4 KB",
+    "category": "deployment",
+    "icon": "fa-solid fa-rocket",
+    "desc": "Deploy containerized web apps on bare servers with zero downtime.",
+    "action": "kamal_config"
+  },
+  {
+    "name": "Cloudflare Wrangler Config",
+    "version": "v3.91.0",
+    "size": "0.2 KB",
+    "category": "deployment",
+    "icon": "devicon-cloudflare-plain colored",
+    "desc": "Deployment configuration file for Cloudflare Workers and Pages.",
+    "action": "wrangler_config"
+  },
+  {
+    "name": "Render Blueprint Spec",
+    "version": "v2.0 Spec",
+    "size": "0.4 KB",
+    "category": "deployment",
+    "icon": "fa-solid fa-cloud",
+    "desc": "Deployment blueprint file (render.yaml) for web services and workers.",
+    "action": "render_config"
+  },
+  {
+    "name": "Vercel Project Setup",
+    "version": "v2 Schema",
+    "size": "0.2 KB",
+    "category": "deployment",
+    "icon": "devicon-vercel-original",
+    "desc": "Instant configuration boilerplate for zero-config serverless deployment.",
+    "action": "vercel_config"
+  },
+  {
+    "name": "Netlify Build Config",
+    "version": "v1.0",
+    "size": "0.3 KB",
+    "category": "deployment",
+    "icon": "devicon-netlify-plain colored",
+    "desc": "netlify.toml boilerplate file with redirect and single-page app rules.",
+    "action": "netlify_config"
+  },
+  {
+    "name": "Serverless Framework Spec",
+    "version": "v4.0.0",
+    "size": "0.4 KB",
+    "category": "deployment",
+    "icon": "fa-solid fa-bolt",
+    "desc": "serverless.yml template for AWS Lambda, API Gateway, and Azure Functions.",
+    "action": "serverless_config"
+  },
+  {
+    "name": "Surge.sh Domain Config",
+    "version": "v0.24.0",
+    "size": "0.1 KB",
+    "category": "deployment",
+    "icon": "fa-solid fa-globe",
+    "desc": "Free single-command static website hosting configuration file.",
+    "action": "surge_config"
+  },
+  {
+    "name": "Ollama",
+    "version": "v0.5.7",
+    "size": "486.0 MB",
+    "category": "ai",
+    "icon": "fa-solid fa-brain",
+    "desc": "Run Llama 3, DeepSeek, and Mistral LLMs locally on CPU and GPU.",
+    "url": "https://ollama.com/download/OllamaSetup.exe"
+  },
+  {
+    "name": "LM Studio",
+    "version": "v0.3.6",
+    "size": "178.0 MB",
+    "category": "ai",
+    "icon": "fa-solid fa-robot",
+    "desc": "Download, chat with, and run local LLMs with a complete UI.",
+    "url": "https://releases.lmstudio.ai/windows/x64/latest/LM-Studio-Setup.exe"
+  },
+  {
+    "name": "Jan AI",
+    "version": "v0.8.4",
+    "size": "142.0 MB",
+    "category": "ai",
+    "icon": "fa-solid fa-microchip",
+    "desc": "Offline conversational AI desktop client and local OpenAI API server.",
+    "github_repo": "janhq/jan",
+    "asset_pattern": "win-x64.exe"
+  },
+  {
+    "name": "Postman Desktop",
+    "version": "v11.31.0",
+    "size": "164.0 MB",
+    "category": "api",
+    "icon": "devicon-postman-plain colored",
+    "desc": "API development, design, debugging, and automated testing suite.",
+    "url": "https://dl.pstmn.io/download/latest/win64"
+  },
+  {
+    "name": "Insomnia REST Client",
+    "version": "core@13.2.0",
+    "size": "98.4 MB",
+    "category": "api",
+    "icon": "fa-solid fa-network-wired",
+    "desc": "Open-source testing tool for GraphQL, REST, WebSockets, and gRPC.",
+    "github_repo": "Kong/insomnia",
+    "asset_pattern": "Insomnia.Core.exe"
+  },
+  {
+    "name": "Bruno API Client",
+    "version": "v4.1.0",
+    "size": "118.0 MB",
+    "category": "api",
+    "icon": "fa-solid fa-dog",
+    "desc": "Fast, Git-friendly open-source API client storing collections locally.",
+    "github_repo": "usebruno/bruno",
+    "asset_pattern": "win.exe",
+    "url": "https://github.com/usebruno/bruno/releases/download/v4.1.0/bruno_4.1.0_arm64_win.exe"
+  },
+  {
+    "name": "Hoppscotch Desktop",
+    "version": "v26.8.0-0",
+    "size": "68.2 MB",
+    "category": "api",
+    "icon": "fa-solid fa-paper-plane",
+    "desc": "Lightweight, fast API request builder and open-source testing platform.",
+    "github_repo": "hoppscotch/releases",
+    "asset_pattern": "Setup.exe"
+  },
+  {
+    "name": "Windows Terminal",
+    "version": "v1.24.11911.0",
+    "size": "21.3 MB",
+    "category": "terminals",
+    "icon": "fa-solid fa-terminal",
+    "desc": "Modern, tabbed command-line terminal with custom profiles and themes.",
+    "github_repo": "microsoft/terminal",
+    "asset_pattern": "msixbundle",
+    "url": "https://github.com/microsoft/terminal/releases/download/v1.24.11911.0/Microsoft.WindowsTerminal_1.24.11911.0_8wekyb3d8bbwe.msixbundle"
+  },
+  {
+    "name": "Git Extensions GUI",
+    "version": "v7.2.1",
+    "size": "24.8 MB",
+    "category": "terminals",
+    "icon": "devicon-git-plain colored",
+    "desc": "Visual standalone Git repository manager and visual history browser.",
+    "github_repo": "gitextensions/gitextensions",
+    "asset_pattern": ".msi",
+    "url": "https://github.com/gitextensions/gitextensions/releases/download/v7.2.1/GitExtensions-arm64-7.2.1.7-0aea2d6df.msi"
+  },
+  {
+    "name": "Cmder Full (with Git)",
+    "version": "v1.3.25",
+    "size": "128.0 MB",
+    "category": "terminals",
+    "icon": "fa-solid fa-code-merge",
+    "desc": "Portable console emulator package bringing Unix commands to Windows.",
+    "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.25/cmder.7z"
+  },
+  {
+    "name": "7-Zip (64-bit)",
+    "version": "v24.09",
+    "size": "1.6 MB",
+    "category": "sysutils",
+    "icon": "fa-solid fa-file-zipper",
+    "desc": "High-ratio open-source archive file unpacker and compressor.",
+    "url": "https://www.7-zip.org/a/7z2409-x64.exe"
+  },
+  {
+    "name": "Wireshark Packet Analyzer",
+    "version": "v4.4.3",
+    "size": "84.2 MB",
+    "category": "sysutils",
+    "icon": "fa-solid fa-network-wired",
+    "desc": "World's foremost network protocol packet sniffer and traffic analyzer.",
+    "url": "https://2.na.dl.wireshark.org/win64/Wireshark-win64-4.4.3.exe"
+  },
+  {
+    "name": "Rufus USB Creator",
+    "version": "v4.15",
+    "size": "1.9 MB",
+    "category": "sysutils",
+    "icon": "fa-solid fa-usb",
+    "desc": "Utility to format and create bootable USB drives (ISOs/Linux/Windows).",
+    "github_repo": "pbatard/rufus",
+    "asset_pattern": ".exe",
+    "url": "https://github.com/pbatard/rufus/releases/download/v4.15/rufus-4.15.exe"
+  },
+  {
+    "name": "Obsidian Notes",
+    "version": "v1.13.8",
+    "size": "94.5 MB",
+    "category": "sysutils",
+    "icon": "fa-solid fa-book",
+    "desc": "Local, markdown-based knowledge base and note-taking workspace.",
+    "github_repo": "obsidianmd/obsidian-releases",
+    "asset_pattern": "Obsidian.exe"
+  },
+  {
+    "name": "Flutter SDK",
+    "version": "v3.27.3",
+    "size": "1.1 GB",
+    "category": "mobile",
+    "icon": "devicon-flutter-plain colored",
+    "desc": "Google cross-platform SDK for iOS, Android, web, and desktop.",
+    "url": "https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.27.3-stable.zip"
+  },
+  {
+    "name": "Android Studio",
+    "version": "v2024.2.2",
+    "size": "1.2 GB",
+    "category": "mobile",
+    "icon": "devicon-androidstudio-plain colored",
+    "desc": "Official IDE for Android development with device emulators included.",
+    "url": "https://redirector.gvt1.com/edgedl/android/studio/install/2024.2.2.13/android-studio-2024.2.2.13-windows.exe"
+  },
+  {
+    "name": "Figma Desktop (x64)",
+    "version": "v124.7.2",
+    "size": "88.4 MB",
+    "category": "design",
+    "icon": "devicon-figma-plain colored",
+    "desc": "Collaborative interface design, vector prototyping, and wireframing.",
+    "url": "https://desktop.figma.com/win/FigmaSetup.exe"
+  },
+  {
+    "name": "Penpot Desktop GUI",
+    "version": "v2.3.0",
+    "size": "92.0 MB",
+    "category": "design",
+    "icon": "fa-solid fa-pen-ruler",
+    "desc": "Open-source, web-standard vector design and UI prototyping app.",
+    "github_repo": "penpot/penpot-desktop",
+    "asset_pattern": "Setup.exe"
+  },
+  {
+    "name": "Blender 3D Suite",
+    "version": "v4.3.2",
+    "size": "342.0 MB",
+    "category": "design",
+    "icon": "devicon-blender-original colored",
+    "desc": "3D creation suite for UI animation, web assets, and game models.",
+    "url": "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.3/blender-4.3.2-windows-x64.msi"
+  }
+]
