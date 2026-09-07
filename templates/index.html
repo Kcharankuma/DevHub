@@ -1,139 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevHub Universal - Instant Developer Downloads</title>
 
-    <!-- Primary Meta Tags -->
-    <title>DevHub Universal - Download Official Developer Tools &
-      Binaries</title>
-    <meta name="title"
-      content="DevHub Universal - Download Official Developer Tools & Binaries" />
-    <meta name="description"
-      content="Download verified, 1-click official developer toolchains, compilers, runtimes, and deployment boilerplates. Fast, direct, zero redirects." />
-    <meta name="keywords"
-      content="download python, install docker, nodejs installer, kubernetes cli, developer tools, compiler binaries" />
-    <link rel="canonical" href="https://yourdomain.com/" />
+  <!-- External Font & Icon CDNs -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com/" />
-    <meta property="og:title"
-      content="DevHub Universal - Instant Developer Binaries" />
-    <meta property="og:description"
-      content="Direct downloads for official developer runtimes, compilers, and IDEs." />
-
-    <!-- Structured Data for Google Software Application Indexing -->
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "DevHub Universal",
-    "url": "https://yourdomain.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://yourdomain.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+  <style>
+    :root {
+      --bg-main: #050814;
+      --bg-surface: #0a1020;
+      --bg-card: rgba(15, 23, 42, 0.78);
+      --bg-card-hover: rgba(22, 34, 56, 0.92);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-bright: #334155;
+      --accent-cyan: #38bdf8;
+      --accent-purple: #a855f7;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
     }
-  }
-  </script>
-  </head>
-  <body>
 
-    <!-- 3D Cyber Terrain Canvas -->
-    <canvas id="bg3d"></canvas>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    <div class="container">
-      <header>
-        <div class="brand-badge">
-          <i class="fa-solid fa-layer-group"></i> Centralized Dev Platform
-        </div>
-        <h1>DevHub Universal</h1>
-        <p> Just One Click It Automatically Download's Your Application <br>No
-          ads, no popups, and no waiting screens.</p>
+    html, body {
+      background-color: #050814 !important;
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-        <div class="header-actions">
-          <span class="sync-status" id="syncStatus">
-            <i class="fa-solid fa-circle-check"></i> Auto-sync Active
-          </span>
-          <button class="sync-btn" id="syncBtn" onclick="triggerManualSync()">
-            <i class="fa-solid fa-rotate"></i> Sync Releases
+    body {
+      padding: 2rem 1.25rem 5rem;
+    }
+
+    /* 3D Background Canvas */
+    #bg3d {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: -10 !important;
+      pointer-events: none !important;
+      background-color: var(--bg-main);
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      color: #c084fc;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      margin-bottom: 0.8rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .header-actions {
+      margin-top: 1.1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .sync-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+    }
+
+    .sync-btn {
+      background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+      color: #ffffff;
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      padding: 0.45rem 1.1rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3);
+      transition: all 0.22s ease;
+    }
+
+    .sync-btn:hover {
+      background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.45);
+    }
+
+    /* Control Dock */
+    .control-dock {
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
+      background: rgba(12, 19, 34, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-lg);
+      padding: 0.85rem 1.15rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.75);
+    }
+
+    .command-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .search-wrapper {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      background: rgba(6, 9, 19, 0.8);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-md);
+      padding: 0.65rem 0.95rem;
+      transition: all 0.22s ease;
+    }
+
+    .search-wrapper:focus-within {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+      background: rgba(8, 14, 28, 0.95);
+    }
+
+    .search-wrapper i.search-icon {
+      color: var(--text-dim);
+      font-size: 1rem;
+      margin-right: 0.75rem;
+    }
+
+    .search-wrapper:focus-within i.search-icon {
+      color: #818cf8;
+    }
+
+    .search-wrapper input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .search-wrapper input::placeholder {
+      color: var(--text-dim);
+    }
+
+    .clear-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .clear-btn:hover {
+      color: #f43f5e;
+    }
+
+    .search-hint-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      background: #1e293b;
+      padding: 0.25rem 0.55rem;
+      border-radius: 5px;
+      border: 1px solid #334155;
+      user-select: none;
+      margin-left: 0.5rem;
+    }
+
+    .dock-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .sort-select {
+      background: rgba(6, 9, 19, 0.8);
+      color: var(--text-muted);
+      border: 1px solid var(--border-bright);
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 500;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .sort-select:hover, .sort-select:focus {
+      border-color: #818cf8;
+      color: var(--text-main);
+    }
+
+    .stat-counter {
+      white-space: nowrap;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #a78bfa;
+      background: rgba(167, 139, 250, 0.1);
+      border: 1px solid rgba(167, 139, 250, 0.3);
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius-md);
+      user-select: none;
+    }
+
+    /* Category Carousel */
+    .category-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .scroll-btn {
+      background: #1e293b;
+      border: 1px solid #475569;
+      color: #e2e8f0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 5;
+      transition: all 0.2s ease;
+    }
+
+    .scroll-btn:hover {
+      background: #4338ca;
+      color: #ffffff;
+      border-color: #6366f1;
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+    }
+
+    .category-scroller {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 0.2rem 0.3rem;
+      scrollbar-width: none;
+    }
+
+    .category-scroller::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-pill {
+      white-space: nowrap;
+      background: #0f172a;
+      color: #94a3b8;
+      border: 1px solid #334155;
+      padding: 0.45rem 0.95rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .tab-pill:hover {
+      background: #1e293b;
+      color: #ffffff;
+      border-color: #06b6d4;
+    }
+
+    .tab-pill.active {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(14, 165, 233, 0.25) 100%);
+      color: #22d3ee;
+      border-color: #06b6d4;
+      font-weight: 700;
+      box-shadow: 0 0 16px rgba(6, 182, 212, 0.35);
+    }
+
+    .tab-pill .pill-count {
+      font-size: 0.68rem;
+      font-weight: 700;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.1rem 0.45rem;
+      border-radius: 9999px;
+      color: #94a3b8;
+    }
+
+    .tab-pill.active .pill-count {
+      background: #0891b2;
+      border-color: #22d3ee;
+      color: #ffffff;
+    }
+
+    mark.search-match {
+      background: rgba(245, 158, 11, 0.3);
+      color: #fde047;
+      padding: 0 0.15rem;
+      border-radius: 2px;
+      font-weight: 700;
+    }
+
+    /* Sections & Grid */
+    .category-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-header h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      letter-spacing: -0.01em;
+    }
+
+    .section-header .item-counter {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      background: rgba(30, 41, 59, 0.6);
+      padding: 0.15rem 0.6rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Translucent Glass Cards */
+    .card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, transparent, transparent);
+      transition: background 0.25s;
+    }
+
+    .card:hover {
+      background: var(--bg-card-hover);
+      border-color: #6366f1;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px -10px rgba(0, 0, 0, 0.55);
+    }
+
+    .card:hover::before {
+      background: linear-gradient(90deg, transparent, #818cf8, transparent);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    /* REAL LOGO COLOR RULES */
+    .card-icon {
+      font-size: 2.6rem !important;
+      line-height: 1 !important;
+      opacity: 1 !important;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) !important;
+    }
+
+    .card-icon.colored {
+      filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45)) !important;
+    }
+
+    .badges-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.35rem;
+    }
+
+    .version-chip {
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .size-chip {
+      font-size: 0.70rem;
+      font-weight: 700;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #ec4899;
+      background: rgba(236, 72, 153, 0.1);
+      border: 1px solid rgba(236, 72, 153, 0.3);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.45;
+      margin-bottom: 1.35rem;
+      flex-grow: 1;
+    }
+
+    /* ELECTRIC INDIGO / VIOLET DOWNLOAD BUTTONS */
+    .download-action {
+      text-decoration: none;
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.7rem 1.1rem;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #ffffff !important;
+      border: 1px solid rgba(167, 139, 250, 0.35);
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+      transition: all 0.22s ease;
+    }
+
+    .download-action:hover {
+      background: linear-gradient(135deg, #6366f1 0%, #9333ea 100%);
+      color: #ffffff !important;
+      border-color: #c084fc;
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .download-action i {
+      font-size: 0.9rem;
+      transition: transform 0.18s ease;
+    }
+
+    .download-action:hover i {
+      transform: translateY(2px);
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 5rem 1rem;
+      display: none;
+    }
+
+    .no-results i {
+      font-size: 2.5rem;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+    }
+
+    .no-results h3 {
+      color: #e2e8f0;
+      margin-bottom: 0.25rem;
+    }
+
+    .no-results p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 5rem;
+      color: var(--text-dim);
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 768px) {
+      .command-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .dock-actions {
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 3D Cyber Terrain Canvas -->
+  <canvas id="bg3d"></canvas>
+
+  <div class="container">
+    <header>
+      <div class="brand-badge">
+        <i class="fa-solid fa-layer-group"></i> Centralized Dev Platform
+      </div>
+      <h1>DevHub Universal</h1>
+      <p>Instant 1-click binaries, compiler toolchains, and deployment boilerplates straight from upstream official repositories.</p>
+
+      <div class="header-actions">
+        <span class="sync-status" id="syncStatus">
+          <i class="fa-solid fa-circle-check"></i> Auto-sync Active
+        </span>
+        <button class="sync-btn" id="syncBtn" onclick="triggerManualSync()">
+          <i class="fa-solid fa-rotate"></i> Sync Releases
+        </button>
+      </div>
+    </header>
+
+    <div class="control-dock">
+      <div class="command-bar">
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Quick find anything... (e.g., python, docker, 28 MB, postgres, react)" 
+            autocomplete="off" 
+            spellcheck="false"
+          />
+          <button class="clear-btn" id="clearSearchBtn" title="Clear Search">
+            <i class="fa-solid fa-xmark"></i>
           </button>
-        </div>
-      </header>
-
-      <div class="control-dock">
-        <div class="command-bar">
-          <div class="search-wrapper">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="Quick find anything... (e.g., python, docker, 28 MB, postgres, react)"
-              autocomplete="off"
-              spellcheck="false" />
-            <button class="clear-btn" id="clearSearchBtn" title="Clear Search">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-            <span class="search-hint-badge">Ctrl + K</span>
-          </div>
-
-          <div class="dock-actions">
-            <select id="sortSelect" class="sort-select"
-              title="Sort application view">
-              <option value="default">Default Order</option>
-              <option value="name-asc">Name (A → Z)</option>
-              <option value="name-desc">Name (Z → A)</option>
-              <option value="size-desc">Largest Payload</option>
-              <option value="size-asc">Smallest Payload</option>
-            </select>
-            <span class="stat-counter" id="activeItemCount">... tools</span>
-          </div>
+          <span class="search-hint-badge">Ctrl + K</span>
         </div>
 
-        <div class="category-container">
-          <button class="scroll-btn prev-btn" id="scrollLeft"
-            title="Scroll left">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-
-          <div class="category-scroller" id="tabScroller">
-            <button class="tab-pill active" data-filter="all">
-              <i class="fa-solid fa-border-all"></i> All Tools
-              <span class="pill-count" id="count-all">0</span>
-            </button>
-            {% for key, val in categories.items() %}
-            <button class="tab-pill" data-filter="{{ key }}">
-              {{ val }}
-              <span class="pill-count" id="count-{{ key }}">0</span>
-            </button>
-            {% endfor %}
-          </div>
-
-          <button class="scroll-btn next-btn" id="scrollRight"
-            title="Scroll right">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
+        <div class="dock-actions">
+          <select id="sortSelect" class="sort-select" title="Sort application view">
+            <option value="default">Default Order</option>
+            <option value="name-asc">Name (A → Z)</option>
+            <option value="name-desc">Name (Z → A)</option>
+            <option value="size-desc">Largest Payload</option>
+            <option value="size-asc">Smallest Payload</option>
+          </select>
+          <span class="stat-counter" id="activeItemCount">... tools</span>
         </div>
       </div>
 
-      <div id="contentArea"></div>
+      <div class="category-container">
+        <button class="scroll-btn prev-btn" id="scrollLeft" title="Scroll left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
 
-      <div id="noResults" class="no-results">
-        <i class="fa-solid fa-box-open"></i>
-        <h3>No tools matched your criteria</h3>
-        <p>Try clearing your search terms or selecting "All Tools".</p>
+        <div class="category-scroller" id="tabScroller">
+          <button class="tab-pill active" data-filter="all">
+            <i class="fa-solid fa-border-all"></i> All Tools
+            <span class="pill-count" id="count-all">0</span>
+          </button>
+          {% for key, val in categories.items() %}
+          <button class="tab-pill" data-filter="{{ key }}">
+            {{ val }}
+            <span class="pill-count" id="count-{{ key }}">0</span>
+          </button>
+          {% endfor %}
+        </div>
+
+        <button class="scroll-btn next-btn" id="scrollRight" title="Scroll right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
-
-      <footer>
-        <p>&copy; 2026 DevHub Universal Charan kumar.com &bull; Direct
-          executable payloads with
-          zero intermediate landing pages.</p>
-      </footer>
     </div>
 
-    <!-- 3D Interactive Mesh Background -->
-    <script>
+    <div id="contentArea"></div>
+
+    <div id="noResults" class="no-results">
+      <i class="fa-solid fa-box-open"></i>
+      <h3>No tools matched your criteria</h3>
+      <p>Try clearing your search terms or selecting "All Tools".</p>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 DevHub Universal &bull; Direct executable payloads with zero intermediate landing pages.</p>
+    </footer>
+  </div>
+
+  <!-- 3D Interactive Mesh Background Engine -->
+  <script>
     (function init3DBackground() {
       const canvas = document.getElementById('bg3d');
       if (!canvas) return;
@@ -267,8 +821,8 @@
     })();
   </script>
 
-    <!-- Application Interaction & Real Logo Color Logic -->
-    <script>
+  <!-- Application Interaction & Real Brand Color Logic -->
+  <script>
     const catalog = {{ catalog | tojson | safe }};
     const categoryNames = {{ categories | tojson | safe }};
 
@@ -287,7 +841,6 @@
     const scrollLeftBtn = document.getElementById('scrollLeft');
     const scrollRightBtn = document.getElementById('scrollRight');
 
-    // Real brand color palette dictionary for FontAwesome or non-Devicon items
     const brandColors = {
       "pocketbase": "#10b981",
       "coolify": "#9333ea",
@@ -326,7 +879,6 @@
       let cls = iconString || 'fa-solid fa-cube';
       const lowerName = (toolName || '').toLowerCase();
 
-      // If it's a devicon, ensure 'colored' class is always attached for its real SVG brand color
       if (cls.includes('devicon-')) {
         if (!cls.includes('colored')) {
           cls += ' colored';
@@ -334,7 +886,6 @@
         return `<i class="${cls} card-icon"></i>`;
       }
 
-      // If it's FontAwesome, map to its exact real brand hex color
       let styleColor = '#38bdf8';
       for (const [key, colorHex] of Object.entries(brandColors)) {
         if (lowerName.includes(key)) {
@@ -510,7 +1061,7 @@
 
             const btnHtml = isTemplate
               ? `<a href="${downloadUrl}" download class="download-action"><i class="fa-solid fa-file-code"></i> Download Template</a>`
-              : `<a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="download-action"><i class="fa-solid fa-download"></i> Quick Install</a>`;
+              : `<a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="download-action"><i class="fa-solid fa-download"></i> Download Installer</a>`;
 
             const iconMarkup = resolveIconHTML(item.icon, item.name);
             const versionTag = item.version || 'vLatest';
@@ -559,5 +1110,5 @@
     initCategoryCounts();
     renderCatalog();
   </script>
-  </body>
+</body>
 </html>
